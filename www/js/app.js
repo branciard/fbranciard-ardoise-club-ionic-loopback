@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','lbServices'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -30,6 +30,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
+  
+  .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'loginCtrl'
+    })
 
   // setup an abstract state for the tabs directive
     .state('tab', {
@@ -37,6 +43,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
+
 
   // Each tab has its own nav history stack:
 
@@ -77,9 +84,83 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'AccountCtrl'
       }
     }
-  });
+  })
+  .state('tab.profile', {
+    url: '/profile',
+    views: {
+      'tab-profile': {
+        templateUrl: 'templates/tab-profile.html'
+      }
+    }
+  })
+  .state('tab.search', {
+    url: '/search',
+    views: {
+      'tab-search': {
+        templateUrl: 'templates/tab-search.html'
+      }
+    }
+  })
+    .state('tab.nowasteboards', {
+    url: '/nowasteboards',
+    views: {
+      'tab-nowasteboards': {
+        templateUrl: 'templates/tab-nowasteboards.html'
+      }
+    }
+  })
+     .state('tab.dailyboards', {
+    url: '/dailyboards',
+    views: {
+      'tab-dailyboards': {
+        templateUrl: 'templates/tab-dailyboards.html'
+      }
+    }
+  })
+  
+  
+      .state('tab-owner', {
+    url: '/tab-owner',
+    abstract: true,
+    templateUrl: 'templates/tabs-owner.html'
+  })
+   .state('tab-owner.dailyboard', {
+    url: '/dailyboard',
+    views: {
+      'tab-owner-dailyboard': {
+        templateUrl: 'templates/tab-owner-dailyboard.html'
+      }
+    }
+  })
+     .state('tab-owner.nowasteboard', {
+    url: '/nowasteboard',
+    views: {
+      'tab-owner-nowasteboard': {
+        templateUrl: 'templates/tab-owner-nowasteboard.html'
+      }
+    }
+  })
+       .state('tab-owner.clients', {
+    url: '/clients',
+    views: {
+      'tab-owner-clients': {
+        templateUrl: 'templates/tab-owner-clients.html'
+      }
+    }
+  })
+         .state('tab-owner.profile', {
+    url: '/profile',
+    views: {
+      'tab-owner-profile': {
+        templateUrl: 'templates/tab-owner-profile.html'
+      }
+    }
+  })
+ 
+
+  ;
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('tab-owner/dailyboard');
 
 });
