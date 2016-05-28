@@ -3,6 +3,24 @@
     <h2>Welcome owner daily board page</h2>
     <p>
     This is the owner daily board page
-    </p>>
+    </p>
+         
+       <form ng-submit="addDailyItem()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">item name </span> :
+          <input type="text" ng-model="dailyItemData.name">
+        </label>
+              <label class="item item-input">
+          <span class="input-label">item price </span> :
+          <input type="text" ng-model="dailyItemData.price">
+        </label>
+
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Add item</button>
+        </label>
+      </div>
+    </form>
+    
   </ion-content>
 </ion-view>

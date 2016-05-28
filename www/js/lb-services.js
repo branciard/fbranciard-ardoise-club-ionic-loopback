@@ -617,132 +617,132 @@ module.factory(
           method: "POST"
         },
 
-        // INTERNAL. Use DailyItem.dailyboard() instead.
-        "::get::DailyItem::dailyboard": {
-          url: urlBase + "/DailyItems/:id/dailyboard",
+        // INTERNAL. Use DailyItem.dailyBoard() instead.
+        "::get::DailyItem::dailyBoard": {
+          url: urlBase + "/DailyItems/:id/dailyBoard",
           method: "GET"
         },
 
-        // INTERNAL. Use Shop.dailyboard() instead.
-        "::get::Shop::dailyboard": {
-          url: urlBase + "/Shops/:id/dailyboard",
+        // INTERNAL. Use Shop.dailyBoard() instead.
+        "::get::Shop::dailyBoard": {
+          url: urlBase + "/Shops/:id/dailyBoard",
           method: "GET"
         },
 
-        // INTERNAL. Use Shop.dailyboard.create() instead.
-        "::create::Shop::dailyboard": {
-          url: urlBase + "/Shops/:id/dailyboard",
+        // INTERNAL. Use Shop.dailyBoard.create() instead.
+        "::create::Shop::dailyBoard": {
+          url: urlBase + "/Shops/:id/dailyBoard",
           method: "POST"
         },
 
-        // INTERNAL. Use Shop.dailyboard.createMany() instead.
-        "::createMany::Shop::dailyboard": {
+        // INTERNAL. Use Shop.dailyBoard.createMany() instead.
+        "::createMany::Shop::dailyBoard": {
           isArray: true,
-          url: urlBase + "/Shops/:id/dailyboard",
+          url: urlBase + "/Shops/:id/dailyBoard",
           method: "POST"
         },
 
-        // INTERNAL. Use Shop.dailyboard.update() instead.
-        "::update::Shop::dailyboard": {
-          url: urlBase + "/Shops/:id/dailyboard",
+        // INTERNAL. Use Shop.dailyBoard.update() instead.
+        "::update::Shop::dailyBoard": {
+          url: urlBase + "/Shops/:id/dailyBoard",
           method: "PUT"
         },
 
-        // INTERNAL. Use Shop.dailyboard.destroy() instead.
-        "::destroy::Shop::dailyboard": {
-          url: urlBase + "/Shops/:id/dailyboard",
+        // INTERNAL. Use Shop.dailyBoard.destroy() instead.
+        "::destroy::Shop::dailyBoard": {
+          url: urlBase + "/Shops/:id/dailyBoard",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Profile.dailyboards.findById() instead.
-        "::findById::Profile::dailyboards": {
+        // INTERNAL. Use Profile.dailyBoards.findById() instead.
+        "::findById::Profile::dailyBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/dailyboards/:fk",
+          url: urlBase + "/Profiles/:id/dailyBoards/:fk",
           method: "GET"
         },
 
-        // INTERNAL. Use Profile.dailyboards.destroyById() instead.
-        "::destroyById::Profile::dailyboards": {
+        // INTERNAL. Use Profile.dailyBoards.destroyById() instead.
+        "::destroyById::Profile::dailyBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/dailyboards/:fk",
+          url: urlBase + "/Profiles/:id/dailyBoards/:fk",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Profile.dailyboards.updateById() instead.
-        "::updateById::Profile::dailyboards": {
+        // INTERNAL. Use Profile.dailyBoards.updateById() instead.
+        "::updateById::Profile::dailyBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/dailyboards/:fk",
+          url: urlBase + "/Profiles/:id/dailyBoards/:fk",
           method: "PUT"
         },
 
-        // INTERNAL. Use Profile.dailyboards.link() instead.
-        "::link::Profile::dailyboards": {
+        // INTERNAL. Use Profile.dailyBoards.link() instead.
+        "::link::Profile::dailyBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/dailyboards/rel/:fk",
+          url: urlBase + "/Profiles/:id/dailyBoards/rel/:fk",
           method: "PUT"
         },
 
-        // INTERNAL. Use Profile.dailyboards.unlink() instead.
-        "::unlink::Profile::dailyboards": {
+        // INTERNAL. Use Profile.dailyBoards.unlink() instead.
+        "::unlink::Profile::dailyBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/dailyboards/rel/:fk",
+          url: urlBase + "/Profiles/:id/dailyBoards/rel/:fk",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Profile.dailyboards.exists() instead.
-        "::exists::Profile::dailyboards": {
+        // INTERNAL. Use Profile.dailyBoards.exists() instead.
+        "::exists::Profile::dailyBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/dailyboards/rel/:fk",
+          url: urlBase + "/Profiles/:id/dailyBoards/rel/:fk",
           method: "HEAD"
         },
 
-        // INTERNAL. Use Profile.dailyboards() instead.
-        "::get::Profile::dailyboards": {
+        // INTERNAL. Use Profile.dailyBoards() instead.
+        "::get::Profile::dailyBoards": {
           isArray: true,
-          url: urlBase + "/Profiles/:id/dailyboards",
+          url: urlBase + "/Profiles/:id/dailyBoards",
           method: "GET"
         },
 
-        // INTERNAL. Use Profile.dailyboards.create() instead.
-        "::create::Profile::dailyboards": {
-          url: urlBase + "/Profiles/:id/dailyboards",
+        // INTERNAL. Use Profile.dailyBoards.create() instead.
+        "::create::Profile::dailyBoards": {
+          url: urlBase + "/Profiles/:id/dailyBoards",
           method: "POST"
         },
 
-        // INTERNAL. Use Profile.dailyboards.createMany() instead.
-        "::createMany::Profile::dailyboards": {
+        // INTERNAL. Use Profile.dailyBoards.createMany() instead.
+        "::createMany::Profile::dailyBoards": {
           isArray: true,
-          url: urlBase + "/Profiles/:id/dailyboards",
+          url: urlBase + "/Profiles/:id/dailyBoards",
           method: "POST"
         },
 
-        // INTERNAL. Use Profile.dailyboards.destroyAll() instead.
-        "::delete::Profile::dailyboards": {
-          url: urlBase + "/Profiles/:id/dailyboards",
+        // INTERNAL. Use Profile.dailyBoards.destroyAll() instead.
+        "::delete::Profile::dailyBoards": {
+          url: urlBase + "/Profiles/:id/dailyBoards",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Profile.dailyboards.count() instead.
-        "::count::Profile::dailyboards": {
-          url: urlBase + "/Profiles/:id/dailyboards/count",
+        // INTERNAL. Use Profile.dailyBoards.count() instead.
+        "::count::Profile::dailyBoards": {
+          url: urlBase + "/Profiles/:id/dailyBoards/count",
           method: "GET"
         },
 
-        // INTERNAL. Use DailyBoardSubscription.dailyboard() instead.
-        "::get::DailyBoardSubscription::dailyboard": {
-          url: urlBase + "/DailyBoardSubscriptions/:id/dailyboard",
+        // INTERNAL. Use DailyBoardSubscription.dailyBoard() instead.
+        "::get::DailyBoardSubscription::dailyBoard": {
+          url: urlBase + "/DailyBoardSubscriptions/:id/dailyBoard",
           method: "GET"
         },
       }
@@ -1663,9 +1663,9 @@ module.factory(
       { 'id': '@id' },
       {
 
-        // INTERNAL. Use DailyItem.dailyboard() instead.
-        "prototype$__get__dailyboard": {
-          url: urlBase + "/DailyItems/:id/dailyboard",
+        // INTERNAL. Use DailyItem.dailyBoard() instead.
+        "prototype$__get__dailyBoard": {
+          url: urlBase + "/DailyItems/:id/dailyBoard",
           method: "GET"
         },
 
@@ -2294,12 +2294,12 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.DailyItem#dailyboard
+         * @name lbServices.DailyItem#dailyBoard
          * @methodOf lbServices.DailyItem
          *
          * @description
          *
-         * Fetches belongsTo relation dailyboard.
+         * Fetches belongsTo relation dailyBoard.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -2322,9 +2322,9 @@ module.factory(
          * This usually means the response is a `DailyBoard` object.)
          * </em>
          */
-        R.dailyboard = function() {
+        R.dailyBoard = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::get::DailyItem::dailyboard"];
+          var action = TargetResource["::get::DailyItem::dailyBoard"];
           return action.apply(R, arguments);
         };
 
@@ -2915,132 +2915,132 @@ module.factory(
           method: "POST"
         },
 
-        // INTERNAL. Use NoWasteItem.nowasteboard() instead.
-        "::get::NoWasteItem::nowasteboard": {
-          url: urlBase + "/NoWasteItems/:id/nowasteboard",
+        // INTERNAL. Use NoWasteItem.noWasteBoard() instead.
+        "::get::NoWasteItem::noWasteBoard": {
+          url: urlBase + "/NoWasteItems/:id/noWasteBoard",
           method: "GET"
         },
 
-        // INTERNAL. Use Shop.nowasteboard() instead.
-        "::get::Shop::nowasteboard": {
-          url: urlBase + "/Shops/:id/nowasteboard",
+        // INTERNAL. Use Shop.noWasteBoard() instead.
+        "::get::Shop::noWasteBoard": {
+          url: urlBase + "/Shops/:id/noWasteBoard",
           method: "GET"
         },
 
-        // INTERNAL. Use Shop.nowasteboard.create() instead.
-        "::create::Shop::nowasteboard": {
-          url: urlBase + "/Shops/:id/nowasteboard",
+        // INTERNAL. Use Shop.noWasteBoard.create() instead.
+        "::create::Shop::noWasteBoard": {
+          url: urlBase + "/Shops/:id/noWasteBoard",
           method: "POST"
         },
 
-        // INTERNAL. Use Shop.nowasteboard.createMany() instead.
-        "::createMany::Shop::nowasteboard": {
+        // INTERNAL. Use Shop.noWasteBoard.createMany() instead.
+        "::createMany::Shop::noWasteBoard": {
           isArray: true,
-          url: urlBase + "/Shops/:id/nowasteboard",
+          url: urlBase + "/Shops/:id/noWasteBoard",
           method: "POST"
         },
 
-        // INTERNAL. Use Shop.nowasteboard.update() instead.
-        "::update::Shop::nowasteboard": {
-          url: urlBase + "/Shops/:id/nowasteboard",
+        // INTERNAL. Use Shop.noWasteBoard.update() instead.
+        "::update::Shop::noWasteBoard": {
+          url: urlBase + "/Shops/:id/noWasteBoard",
           method: "PUT"
         },
 
-        // INTERNAL. Use Shop.nowasteboard.destroy() instead.
-        "::destroy::Shop::nowasteboard": {
-          url: urlBase + "/Shops/:id/nowasteboard",
+        // INTERNAL. Use Shop.noWasteBoard.destroy() instead.
+        "::destroy::Shop::noWasteBoard": {
+          url: urlBase + "/Shops/:id/noWasteBoard",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.findById() instead.
-        "::findById::Profile::nowasteboards": {
+        // INTERNAL. Use Profile.noWasteBoards.findById() instead.
+        "::findById::Profile::noWasteBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/nowasteboards/:fk",
+          url: urlBase + "/Profiles/:id/noWasteBoards/:fk",
           method: "GET"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.destroyById() instead.
-        "::destroyById::Profile::nowasteboards": {
+        // INTERNAL. Use Profile.noWasteBoards.destroyById() instead.
+        "::destroyById::Profile::noWasteBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/nowasteboards/:fk",
+          url: urlBase + "/Profiles/:id/noWasteBoards/:fk",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.updateById() instead.
-        "::updateById::Profile::nowasteboards": {
+        // INTERNAL. Use Profile.noWasteBoards.updateById() instead.
+        "::updateById::Profile::noWasteBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/nowasteboards/:fk",
+          url: urlBase + "/Profiles/:id/noWasteBoards/:fk",
           method: "PUT"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.link() instead.
-        "::link::Profile::nowasteboards": {
+        // INTERNAL. Use Profile.noWasteBoards.link() instead.
+        "::link::Profile::noWasteBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/nowasteboards/rel/:fk",
+          url: urlBase + "/Profiles/:id/noWasteBoards/rel/:fk",
           method: "PUT"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.unlink() instead.
-        "::unlink::Profile::nowasteboards": {
+        // INTERNAL. Use Profile.noWasteBoards.unlink() instead.
+        "::unlink::Profile::noWasteBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/nowasteboards/rel/:fk",
+          url: urlBase + "/Profiles/:id/noWasteBoards/rel/:fk",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.exists() instead.
-        "::exists::Profile::nowasteboards": {
+        // INTERNAL. Use Profile.noWasteBoards.exists() instead.
+        "::exists::Profile::noWasteBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/nowasteboards/rel/:fk",
+          url: urlBase + "/Profiles/:id/noWasteBoards/rel/:fk",
           method: "HEAD"
         },
 
-        // INTERNAL. Use Profile.nowasteboards() instead.
-        "::get::Profile::nowasteboards": {
+        // INTERNAL. Use Profile.noWasteBoards() instead.
+        "::get::Profile::noWasteBoards": {
           isArray: true,
-          url: urlBase + "/Profiles/:id/nowasteboards",
+          url: urlBase + "/Profiles/:id/noWasteBoards",
           method: "GET"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.create() instead.
-        "::create::Profile::nowasteboards": {
-          url: urlBase + "/Profiles/:id/nowasteboards",
+        // INTERNAL. Use Profile.noWasteBoards.create() instead.
+        "::create::Profile::noWasteBoards": {
+          url: urlBase + "/Profiles/:id/noWasteBoards",
           method: "POST"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.createMany() instead.
-        "::createMany::Profile::nowasteboards": {
+        // INTERNAL. Use Profile.noWasteBoards.createMany() instead.
+        "::createMany::Profile::noWasteBoards": {
           isArray: true,
-          url: urlBase + "/Profiles/:id/nowasteboards",
+          url: urlBase + "/Profiles/:id/noWasteBoards",
           method: "POST"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.destroyAll() instead.
-        "::delete::Profile::nowasteboards": {
-          url: urlBase + "/Profiles/:id/nowasteboards",
+        // INTERNAL. Use Profile.noWasteBoards.destroyAll() instead.
+        "::delete::Profile::noWasteBoards": {
+          url: urlBase + "/Profiles/:id/noWasteBoards",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.count() instead.
-        "::count::Profile::nowasteboards": {
-          url: urlBase + "/Profiles/:id/nowasteboards/count",
+        // INTERNAL. Use Profile.noWasteBoards.count() instead.
+        "::count::Profile::noWasteBoards": {
+          url: urlBase + "/Profiles/:id/noWasteBoards/count",
           method: "GET"
         },
 
-        // INTERNAL. Use NoWasteBoardSubscription.nowasteboard() instead.
-        "::get::NoWasteBoardSubscription::nowasteboard": {
-          url: urlBase + "/NoWasteBoardSubscriptions/:id/nowasteboard",
+        // INTERNAL. Use NoWasteBoardSubscription.noWasteBoard() instead.
+        "::get::NoWasteBoardSubscription::noWasteBoard": {
+          url: urlBase + "/NoWasteBoardSubscriptions/:id/noWasteBoard",
           method: "GET"
         },
       }
@@ -3961,9 +3961,9 @@ module.factory(
       { 'id': '@id' },
       {
 
-        // INTERNAL. Use NoWasteItem.nowasteboard() instead.
-        "prototype$__get__nowasteboard": {
-          url: urlBase + "/NoWasteItems/:id/nowasteboard",
+        // INTERNAL. Use NoWasteItem.noWasteBoard() instead.
+        "prototype$__get__noWasteBoard": {
+          url: urlBase + "/NoWasteItems/:id/noWasteBoard",
           method: "GET"
         },
 
@@ -4592,12 +4592,12 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.NoWasteItem#nowasteboard
+         * @name lbServices.NoWasteItem#noWasteBoard
          * @methodOf lbServices.NoWasteItem
          *
          * @description
          *
-         * Fetches belongsTo relation nowasteboard.
+         * Fetches belongsTo relation noWasteBoard.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -4620,9 +4620,9 @@ module.factory(
          * This usually means the response is a `NoWasteBoard` object.)
          * </em>
          */
-        R.nowasteboard = function() {
+        R.noWasteBoard = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::get::NoWasteItem::nowasteboard"];
+          var action = TargetResource["::get::NoWasteItem::noWasteBoard"];
           return action.apply(R, arguments);
         };
 
@@ -4654,51 +4654,51 @@ module.factory(
       { 'id': '@id' },
       {
 
-        // INTERNAL. Use Shop.dailyboard() instead.
-        "prototype$__get__dailyboard": {
-          url: urlBase + "/Shops/:id/dailyboard",
+        // INTERNAL. Use Shop.dailyBoard() instead.
+        "prototype$__get__dailyBoard": {
+          url: urlBase + "/Shops/:id/dailyBoard",
           method: "GET"
         },
 
-        // INTERNAL. Use Shop.dailyboard.create() instead.
-        "prototype$__create__dailyboard": {
-          url: urlBase + "/Shops/:id/dailyboard",
+        // INTERNAL. Use Shop.dailyBoard.create() instead.
+        "prototype$__create__dailyBoard": {
+          url: urlBase + "/Shops/:id/dailyBoard",
           method: "POST"
         },
 
-        // INTERNAL. Use Shop.dailyboard.update() instead.
-        "prototype$__update__dailyboard": {
-          url: urlBase + "/Shops/:id/dailyboard",
+        // INTERNAL. Use Shop.dailyBoard.update() instead.
+        "prototype$__update__dailyBoard": {
+          url: urlBase + "/Shops/:id/dailyBoard",
           method: "PUT"
         },
 
-        // INTERNAL. Use Shop.dailyboard.destroy() instead.
-        "prototype$__destroy__dailyboard": {
-          url: urlBase + "/Shops/:id/dailyboard",
+        // INTERNAL. Use Shop.dailyBoard.destroy() instead.
+        "prototype$__destroy__dailyBoard": {
+          url: urlBase + "/Shops/:id/dailyBoard",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Shop.nowasteboard() instead.
-        "prototype$__get__nowasteboard": {
-          url: urlBase + "/Shops/:id/nowasteboard",
+        // INTERNAL. Use Shop.noWasteBoard() instead.
+        "prototype$__get__noWasteBoard": {
+          url: urlBase + "/Shops/:id/noWasteBoard",
           method: "GET"
         },
 
-        // INTERNAL. Use Shop.nowasteboard.create() instead.
-        "prototype$__create__nowasteboard": {
-          url: urlBase + "/Shops/:id/nowasteboard",
+        // INTERNAL. Use Shop.noWasteBoard.create() instead.
+        "prototype$__create__noWasteBoard": {
+          url: urlBase + "/Shops/:id/noWasteBoard",
           method: "POST"
         },
 
-        // INTERNAL. Use Shop.nowasteboard.update() instead.
-        "prototype$__update__nowasteboard": {
-          url: urlBase + "/Shops/:id/nowasteboard",
+        // INTERNAL. Use Shop.noWasteBoard.update() instead.
+        "prototype$__update__noWasteBoard": {
+          url: urlBase + "/Shops/:id/noWasteBoard",
           method: "PUT"
         },
 
-        // INTERNAL. Use Shop.nowasteboard.destroy() instead.
-        "prototype$__destroy__nowasteboard": {
-          url: urlBase + "/Shops/:id/nowasteboard",
+        // INTERNAL. Use Shop.noWasteBoard.destroy() instead.
+        "prototype$__destroy__noWasteBoard": {
+          url: urlBase + "/Shops/:id/noWasteBoard",
           method: "DELETE"
         },
 
@@ -4706,30 +4706,6 @@ module.factory(
         "prototype$__get__profile": {
           url: urlBase + "/Shops/:id/profile",
           method: "GET"
-        },
-
-        // INTERNAL. Use Shop.address() instead.
-        "prototype$__get__address": {
-          url: urlBase + "/Shops/:id/address",
-          method: "GET"
-        },
-
-        // INTERNAL. Use Shop.address.create() instead.
-        "prototype$__create__address": {
-          url: urlBase + "/Shops/:id/address",
-          method: "POST"
-        },
-
-        // INTERNAL. Use Shop.address.update() instead.
-        "prototype$__update__address": {
-          url: urlBase + "/Shops/:id/address",
-          method: "PUT"
-        },
-
-        // INTERNAL. Use Shop.address.destroy() instead.
-        "prototype$__destroy__address": {
-          url: urlBase + "/Shops/:id/address",
-          method: "DELETE"
         },
 
         /**
@@ -5196,12 +5172,6 @@ module.factory(
           url: urlBase + "/Profiles/:id/shop",
           method: "DELETE"
         },
-
-        // INTERNAL. Use Address.shop() instead.
-        "::get::Address::shop": {
-          url: urlBase + "/Addresses/:id/shop",
-          method: "GET"
-        },
       }
     );
 
@@ -5346,27 +5316,27 @@ module.factory(
 
     /**
      * @ngdoc object
-     * @name lbServices.Shop.dailyboard
-     * @header lbServices.Shop.dailyboard
+     * @name lbServices.Shop.dailyBoard
+     * @header lbServices.Shop.dailyBoard
      * @object
      * @description
      *
-     * The object `Shop.dailyboard` groups methods
+     * The object `Shop.dailyBoard` groups methods
      * manipulating `DailyBoard` instances related to `Shop`.
      *
-     * Call {@link lbServices.Shop#dailyboard Shop.dailyboard()}
+     * Call {@link lbServices.Shop#dailyBoard Shop.dailyBoard()}
      * to query all related instances.
      */
 
 
         /**
          * @ngdoc method
-         * @name lbServices.Shop#dailyboard
+         * @name lbServices.Shop#dailyBoard
          * @methodOf lbServices.Shop
          *
          * @description
          *
-         * Fetches hasOne relation dailyboard.
+         * Fetches hasOne relation dailyBoard.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -5389,20 +5359,20 @@ module.factory(
          * This usually means the response is a `DailyBoard` object.)
          * </em>
          */
-        R.dailyboard = function() {
+        R.dailyBoard = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::get::Shop::dailyboard"];
+          var action = TargetResource["::get::Shop::dailyBoard"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Shop.dailyboard#create
-         * @methodOf lbServices.Shop.dailyboard
+         * @name lbServices.Shop.dailyBoard#create
+         * @methodOf lbServices.Shop.dailyBoard
          *
          * @description
          *
-         * Creates a new instance in dailyboard of this model.
+         * Creates a new instance in dailyBoard of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -5427,20 +5397,20 @@ module.factory(
          * This usually means the response is a `DailyBoard` object.)
          * </em>
          */
-        R.dailyboard.create = function() {
+        R.dailyBoard.create = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::create::Shop::dailyboard"];
+          var action = TargetResource["::create::Shop::dailyBoard"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Shop.dailyboard#createMany
-         * @methodOf lbServices.Shop.dailyboard
+         * @name lbServices.Shop.dailyBoard#createMany
+         * @methodOf lbServices.Shop.dailyBoard
          *
          * @description
          *
-         * Creates a new instance in dailyboard of this model.
+         * Creates a new instance in dailyBoard of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -5465,20 +5435,20 @@ module.factory(
          * This usually means the response is a `DailyBoard` object.)
          * </em>
          */
-        R.dailyboard.createMany = function() {
+        R.dailyBoard.createMany = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::createMany::Shop::dailyboard"];
+          var action = TargetResource["::createMany::Shop::dailyBoard"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Shop.dailyboard#destroy
-         * @methodOf lbServices.Shop.dailyboard
+         * @name lbServices.Shop.dailyBoard#destroy
+         * @methodOf lbServices.Shop.dailyBoard
          *
          * @description
          *
-         * Deletes dailyboard of this model.
+         * Deletes dailyBoard of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -5496,20 +5466,20 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.dailyboard.destroy = function() {
+        R.dailyBoard.destroy = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::destroy::Shop::dailyboard"];
+          var action = TargetResource["::destroy::Shop::dailyBoard"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Shop.dailyboard#update
-         * @methodOf lbServices.Shop.dailyboard
+         * @name lbServices.Shop.dailyBoard#update
+         * @methodOf lbServices.Shop.dailyBoard
          *
          * @description
          *
-         * Update dailyboard of this model.
+         * Update dailyBoard of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -5534,34 +5504,34 @@ module.factory(
          * This usually means the response is a `DailyBoard` object.)
          * </em>
          */
-        R.dailyboard.update = function() {
+        R.dailyBoard.update = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::update::Shop::dailyboard"];
+          var action = TargetResource["::update::Shop::dailyBoard"];
           return action.apply(R, arguments);
         };
     /**
      * @ngdoc object
-     * @name lbServices.Shop.nowasteboard
-     * @header lbServices.Shop.nowasteboard
+     * @name lbServices.Shop.noWasteBoard
+     * @header lbServices.Shop.noWasteBoard
      * @object
      * @description
      *
-     * The object `Shop.nowasteboard` groups methods
+     * The object `Shop.noWasteBoard` groups methods
      * manipulating `NoWasteBoard` instances related to `Shop`.
      *
-     * Call {@link lbServices.Shop#nowasteboard Shop.nowasteboard()}
+     * Call {@link lbServices.Shop#noWasteBoard Shop.noWasteBoard()}
      * to query all related instances.
      */
 
 
         /**
          * @ngdoc method
-         * @name lbServices.Shop#nowasteboard
+         * @name lbServices.Shop#noWasteBoard
          * @methodOf lbServices.Shop
          *
          * @description
          *
-         * Fetches hasOne relation nowasteboard.
+         * Fetches hasOne relation noWasteBoard.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -5584,20 +5554,20 @@ module.factory(
          * This usually means the response is a `NoWasteBoard` object.)
          * </em>
          */
-        R.nowasteboard = function() {
+        R.noWasteBoard = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::get::Shop::nowasteboard"];
+          var action = TargetResource["::get::Shop::noWasteBoard"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Shop.nowasteboard#create
-         * @methodOf lbServices.Shop.nowasteboard
+         * @name lbServices.Shop.noWasteBoard#create
+         * @methodOf lbServices.Shop.noWasteBoard
          *
          * @description
          *
-         * Creates a new instance in nowasteboard of this model.
+         * Creates a new instance in noWasteBoard of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -5622,20 +5592,20 @@ module.factory(
          * This usually means the response is a `NoWasteBoard` object.)
          * </em>
          */
-        R.nowasteboard.create = function() {
+        R.noWasteBoard.create = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::create::Shop::nowasteboard"];
+          var action = TargetResource["::create::Shop::noWasteBoard"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Shop.nowasteboard#createMany
-         * @methodOf lbServices.Shop.nowasteboard
+         * @name lbServices.Shop.noWasteBoard#createMany
+         * @methodOf lbServices.Shop.noWasteBoard
          *
          * @description
          *
-         * Creates a new instance in nowasteboard of this model.
+         * Creates a new instance in noWasteBoard of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -5660,20 +5630,20 @@ module.factory(
          * This usually means the response is a `NoWasteBoard` object.)
          * </em>
          */
-        R.nowasteboard.createMany = function() {
+        R.noWasteBoard.createMany = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::createMany::Shop::nowasteboard"];
+          var action = TargetResource["::createMany::Shop::noWasteBoard"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Shop.nowasteboard#destroy
-         * @methodOf lbServices.Shop.nowasteboard
+         * @name lbServices.Shop.noWasteBoard#destroy
+         * @methodOf lbServices.Shop.noWasteBoard
          *
          * @description
          *
-         * Deletes nowasteboard of this model.
+         * Deletes noWasteBoard of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -5691,20 +5661,20 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.nowasteboard.destroy = function() {
+        R.noWasteBoard.destroy = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::destroy::Shop::nowasteboard"];
+          var action = TargetResource["::destroy::Shop::noWasteBoard"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Shop.nowasteboard#update
-         * @methodOf lbServices.Shop.nowasteboard
+         * @name lbServices.Shop.noWasteBoard#update
+         * @methodOf lbServices.Shop.noWasteBoard
          *
          * @description
          *
-         * Update nowasteboard of this model.
+         * Update noWasteBoard of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -5729,9 +5699,9 @@ module.factory(
          * This usually means the response is a `NoWasteBoard` object.)
          * </em>
          */
-        R.nowasteboard.update = function() {
+        R.noWasteBoard.update = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::update::Shop::nowasteboard"];
+          var action = TargetResource["::update::Shop::noWasteBoard"];
           return action.apply(R, arguments);
         };
 
@@ -5768,201 +5738,6 @@ module.factory(
         R.profile = function() {
           var TargetResource = $injector.get("Profile");
           var action = TargetResource["::get::Shop::profile"];
-          return action.apply(R, arguments);
-        };
-    /**
-     * @ngdoc object
-     * @name lbServices.Shop.address
-     * @header lbServices.Shop.address
-     * @object
-     * @description
-     *
-     * The object `Shop.address` groups methods
-     * manipulating `Address` instances related to `Shop`.
-     *
-     * Call {@link lbServices.Shop#address Shop.address()}
-     * to query all related instances.
-     */
-
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Shop#address
-         * @methodOf lbServices.Shop
-         *
-         * @description
-         *
-         * Fetches hasOne relation address.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `refresh` – `{boolean=}` - 
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Address` object.)
-         * </em>
-         */
-        R.address = function() {
-          var TargetResource = $injector.get("Address");
-          var action = TargetResource["::get::Shop::address"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Shop.address#create
-         * @methodOf lbServices.Shop.address
-         *
-         * @description
-         *
-         * Creates a new instance in address of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Address` object.)
-         * </em>
-         */
-        R.address.create = function() {
-          var TargetResource = $injector.get("Address");
-          var action = TargetResource["::create::Shop::address"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Shop.address#createMany
-         * @methodOf lbServices.Shop.address
-         *
-         * @description
-         *
-         * Creates a new instance in address of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Address` object.)
-         * </em>
-         */
-        R.address.createMany = function() {
-          var TargetResource = $injector.get("Address");
-          var action = TargetResource["::createMany::Shop::address"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Shop.address#destroy
-         * @methodOf lbServices.Shop.address
-         *
-         * @description
-         *
-         * Deletes address of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        R.address.destroy = function() {
-          var TargetResource = $injector.get("Address");
-          var action = TargetResource["::destroy::Shop::address"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Shop.address#update
-         * @methodOf lbServices.Shop.address
-         *
-         * @description
-         *
-         * Update address of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Address` object.)
-         * </em>
-         */
-        R.address.update = function() {
-          var TargetResource = $injector.get("Address");
-          var action = TargetResource["::update::Shop::address"];
           return action.apply(R, arguments);
         };
 
@@ -6133,111 +5908,111 @@ module.factory(
           method: "DELETE"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.findById() instead.
-        "prototype$__findById__nowasteboards": {
+        // INTERNAL. Use Profile.noWasteBoards.findById() instead.
+        "prototype$__findById__noWasteBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/nowasteboards/:fk",
+          url: urlBase + "/Profiles/:id/noWasteBoards/:fk",
           method: "GET"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.destroyById() instead.
-        "prototype$__destroyById__nowasteboards": {
+        // INTERNAL. Use Profile.noWasteBoards.destroyById() instead.
+        "prototype$__destroyById__noWasteBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/nowasteboards/:fk",
+          url: urlBase + "/Profiles/:id/noWasteBoards/:fk",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.updateById() instead.
-        "prototype$__updateById__nowasteboards": {
+        // INTERNAL. Use Profile.noWasteBoards.updateById() instead.
+        "prototype$__updateById__noWasteBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/nowasteboards/:fk",
+          url: urlBase + "/Profiles/:id/noWasteBoards/:fk",
           method: "PUT"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.link() instead.
-        "prototype$__link__nowasteboards": {
+        // INTERNAL. Use Profile.noWasteBoards.link() instead.
+        "prototype$__link__noWasteBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/nowasteboards/rel/:fk",
+          url: urlBase + "/Profiles/:id/noWasteBoards/rel/:fk",
           method: "PUT"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.unlink() instead.
-        "prototype$__unlink__nowasteboards": {
+        // INTERNAL. Use Profile.noWasteBoards.unlink() instead.
+        "prototype$__unlink__noWasteBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/nowasteboards/rel/:fk",
+          url: urlBase + "/Profiles/:id/noWasteBoards/rel/:fk",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.exists() instead.
-        "prototype$__exists__nowasteboards": {
+        // INTERNAL. Use Profile.noWasteBoards.exists() instead.
+        "prototype$__exists__noWasteBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/nowasteboards/rel/:fk",
+          url: urlBase + "/Profiles/:id/noWasteBoards/rel/:fk",
           method: "HEAD"
         },
 
-        // INTERNAL. Use Profile.dailyboards.findById() instead.
-        "prototype$__findById__dailyboards": {
+        // INTERNAL. Use Profile.dailyBoards.findById() instead.
+        "prototype$__findById__dailyBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/dailyboards/:fk",
+          url: urlBase + "/Profiles/:id/dailyBoards/:fk",
           method: "GET"
         },
 
-        // INTERNAL. Use Profile.dailyboards.destroyById() instead.
-        "prototype$__destroyById__dailyboards": {
+        // INTERNAL. Use Profile.dailyBoards.destroyById() instead.
+        "prototype$__destroyById__dailyBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/dailyboards/:fk",
+          url: urlBase + "/Profiles/:id/dailyBoards/:fk",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Profile.dailyboards.updateById() instead.
-        "prototype$__updateById__dailyboards": {
+        // INTERNAL. Use Profile.dailyBoards.updateById() instead.
+        "prototype$__updateById__dailyBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/dailyboards/:fk",
+          url: urlBase + "/Profiles/:id/dailyBoards/:fk",
           method: "PUT"
         },
 
-        // INTERNAL. Use Profile.dailyboards.link() instead.
-        "prototype$__link__dailyboards": {
+        // INTERNAL. Use Profile.dailyBoards.link() instead.
+        "prototype$__link__dailyBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/dailyboards/rel/:fk",
+          url: urlBase + "/Profiles/:id/dailyBoards/rel/:fk",
           method: "PUT"
         },
 
-        // INTERNAL. Use Profile.dailyboards.unlink() instead.
-        "prototype$__unlink__dailyboards": {
+        // INTERNAL. Use Profile.dailyBoards.unlink() instead.
+        "prototype$__unlink__dailyBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/dailyboards/rel/:fk",
+          url: urlBase + "/Profiles/:id/dailyBoards/rel/:fk",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Profile.dailyboards.exists() instead.
-        "prototype$__exists__dailyboards": {
+        // INTERNAL. Use Profile.dailyBoards.exists() instead.
+        "prototype$__exists__dailyBoards": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Profiles/:id/dailyboards/rel/:fk",
+          url: urlBase + "/Profiles/:id/dailyBoards/rel/:fk",
           method: "HEAD"
         },
 
@@ -6378,53 +6153,53 @@ module.factory(
           method: "GET"
         },
 
-        // INTERNAL. Use Profile.nowasteboards() instead.
-        "prototype$__get__nowasteboards": {
+        // INTERNAL. Use Profile.noWasteBoards() instead.
+        "prototype$__get__noWasteBoards": {
           isArray: true,
-          url: urlBase + "/Profiles/:id/nowasteboards",
+          url: urlBase + "/Profiles/:id/noWasteBoards",
           method: "GET"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.create() instead.
-        "prototype$__create__nowasteboards": {
-          url: urlBase + "/Profiles/:id/nowasteboards",
+        // INTERNAL. Use Profile.noWasteBoards.create() instead.
+        "prototype$__create__noWasteBoards": {
+          url: urlBase + "/Profiles/:id/noWasteBoards",
           method: "POST"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.destroyAll() instead.
-        "prototype$__delete__nowasteboards": {
-          url: urlBase + "/Profiles/:id/nowasteboards",
+        // INTERNAL. Use Profile.noWasteBoards.destroyAll() instead.
+        "prototype$__delete__noWasteBoards": {
+          url: urlBase + "/Profiles/:id/noWasteBoards",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Profile.nowasteboards.count() instead.
-        "prototype$__count__nowasteboards": {
-          url: urlBase + "/Profiles/:id/nowasteboards/count",
+        // INTERNAL. Use Profile.noWasteBoards.count() instead.
+        "prototype$__count__noWasteBoards": {
+          url: urlBase + "/Profiles/:id/noWasteBoards/count",
           method: "GET"
         },
 
-        // INTERNAL. Use Profile.dailyboards() instead.
-        "prototype$__get__dailyboards": {
+        // INTERNAL. Use Profile.dailyBoards() instead.
+        "prototype$__get__dailyBoards": {
           isArray: true,
-          url: urlBase + "/Profiles/:id/dailyboards",
+          url: urlBase + "/Profiles/:id/dailyBoards",
           method: "GET"
         },
 
-        // INTERNAL. Use Profile.dailyboards.create() instead.
-        "prototype$__create__dailyboards": {
-          url: urlBase + "/Profiles/:id/dailyboards",
+        // INTERNAL. Use Profile.dailyBoards.create() instead.
+        "prototype$__create__dailyBoards": {
+          url: urlBase + "/Profiles/:id/dailyBoards",
           method: "POST"
         },
 
-        // INTERNAL. Use Profile.dailyboards.destroyAll() instead.
-        "prototype$__delete__dailyboards": {
-          url: urlBase + "/Profiles/:id/dailyboards",
+        // INTERNAL. Use Profile.dailyBoards.destroyAll() instead.
+        "prototype$__delete__dailyBoards": {
+          url: urlBase + "/Profiles/:id/dailyBoards",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Profile.dailyboards.count() instead.
-        "prototype$__count__dailyboards": {
-          url: urlBase + "/Profiles/:id/dailyboards/count",
+        // INTERNAL. Use Profile.dailyBoards.count() instead.
+        "prototype$__count__dailyBoards": {
+          url: urlBase + "/Profiles/:id/dailyBoards/count",
           method: "GET"
         },
 
@@ -7625,27 +7400,27 @@ module.factory(
         };
     /**
      * @ngdoc object
-     * @name lbServices.Profile.nowasteboards
-     * @header lbServices.Profile.nowasteboards
+     * @name lbServices.Profile.noWasteBoards
+     * @header lbServices.Profile.noWasteBoards
      * @object
      * @description
      *
-     * The object `Profile.nowasteboards` groups methods
+     * The object `Profile.noWasteBoards` groups methods
      * manipulating `NoWasteBoard` instances related to `Profile`.
      *
-     * Call {@link lbServices.Profile#nowasteboards Profile.nowasteboards()}
+     * Call {@link lbServices.Profile#noWasteBoards Profile.noWasteBoards()}
      * to query all related instances.
      */
 
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile#nowasteboards
+         * @name lbServices.Profile#noWasteBoards
          * @methodOf lbServices.Profile
          *
          * @description
          *
-         * Queries nowasteboards of Profile.
+         * Queries noWasteBoards of Profile.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -7668,20 +7443,20 @@ module.factory(
          * This usually means the response is a `NoWasteBoard` object.)
          * </em>
          */
-        R.nowasteboards = function() {
+        R.noWasteBoards = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::get::Profile::nowasteboards"];
+          var action = TargetResource["::get::Profile::noWasteBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.nowasteboards#count
-         * @methodOf lbServices.Profile.nowasteboards
+         * @name lbServices.Profile.noWasteBoards#count
+         * @methodOf lbServices.Profile.noWasteBoards
          *
          * @description
          *
-         * Counts nowasteboards of Profile.
+         * Counts noWasteBoards of Profile.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -7703,20 +7478,20 @@ module.factory(
          *
          *  - `count` – `{number=}` - 
          */
-        R.nowasteboards.count = function() {
+        R.noWasteBoards.count = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::count::Profile::nowasteboards"];
+          var action = TargetResource["::count::Profile::noWasteBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.nowasteboards#create
-         * @methodOf lbServices.Profile.nowasteboards
+         * @name lbServices.Profile.noWasteBoards#create
+         * @methodOf lbServices.Profile.noWasteBoards
          *
          * @description
          *
-         * Creates a new instance in nowasteboards of this model.
+         * Creates a new instance in noWasteBoards of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -7741,20 +7516,20 @@ module.factory(
          * This usually means the response is a `NoWasteBoard` object.)
          * </em>
          */
-        R.nowasteboards.create = function() {
+        R.noWasteBoards.create = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::create::Profile::nowasteboards"];
+          var action = TargetResource["::create::Profile::noWasteBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.nowasteboards#createMany
-         * @methodOf lbServices.Profile.nowasteboards
+         * @name lbServices.Profile.noWasteBoards#createMany
+         * @methodOf lbServices.Profile.noWasteBoards
          *
          * @description
          *
-         * Creates a new instance in nowasteboards of this model.
+         * Creates a new instance in noWasteBoards of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -7779,20 +7554,20 @@ module.factory(
          * This usually means the response is a `NoWasteBoard` object.)
          * </em>
          */
-        R.nowasteboards.createMany = function() {
+        R.noWasteBoards.createMany = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::createMany::Profile::nowasteboards"];
+          var action = TargetResource["::createMany::Profile::noWasteBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.nowasteboards#destroyAll
-         * @methodOf lbServices.Profile.nowasteboards
+         * @name lbServices.Profile.noWasteBoards#destroyAll
+         * @methodOf lbServices.Profile.noWasteBoards
          *
          * @description
          *
-         * Deletes all nowasteboards of this model.
+         * Deletes all noWasteBoards of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -7810,26 +7585,26 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.nowasteboards.destroyAll = function() {
+        R.noWasteBoards.destroyAll = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::delete::Profile::nowasteboards"];
+          var action = TargetResource["::delete::Profile::noWasteBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.nowasteboards#destroyById
-         * @methodOf lbServices.Profile.nowasteboards
+         * @name lbServices.Profile.noWasteBoards#destroyById
+         * @methodOf lbServices.Profile.noWasteBoards
          *
          * @description
          *
-         * Delete a related item by id for nowasteboards.
+         * Delete a related item by id for noWasteBoards.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - User id
          *
-         *  - `fk` – `{*}` - Foreign key for nowasteboards
+         *  - `fk` – `{*}` - Foreign key for noWasteBoards
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -7843,26 +7618,26 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.nowasteboards.destroyById = function() {
+        R.noWasteBoards.destroyById = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::destroyById::Profile::nowasteboards"];
+          var action = TargetResource["::destroyById::Profile::noWasteBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.nowasteboards#exists
-         * @methodOf lbServices.Profile.nowasteboards
+         * @name lbServices.Profile.noWasteBoards#exists
+         * @methodOf lbServices.Profile.noWasteBoards
          *
          * @description
          *
-         * Check the existence of nowasteboards relation to an item by id.
+         * Check the existence of noWasteBoards relation to an item by id.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - User id
          *
-         *  - `fk` – `{*}` - Foreign key for nowasteboards
+         *  - `fk` – `{*}` - Foreign key for noWasteBoards
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -7879,26 +7654,26 @@ module.factory(
          * This usually means the response is a `NoWasteBoard` object.)
          * </em>
          */
-        R.nowasteboards.exists = function() {
+        R.noWasteBoards.exists = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::exists::Profile::nowasteboards"];
+          var action = TargetResource["::exists::Profile::noWasteBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.nowasteboards#findById
-         * @methodOf lbServices.Profile.nowasteboards
+         * @name lbServices.Profile.noWasteBoards#findById
+         * @methodOf lbServices.Profile.noWasteBoards
          *
          * @description
          *
-         * Find a related item by id for nowasteboards.
+         * Find a related item by id for noWasteBoards.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - User id
          *
-         *  - `fk` – `{*}` - Foreign key for nowasteboards
+         *  - `fk` – `{*}` - Foreign key for noWasteBoards
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -7915,26 +7690,26 @@ module.factory(
          * This usually means the response is a `NoWasteBoard` object.)
          * </em>
          */
-        R.nowasteboards.findById = function() {
+        R.noWasteBoards.findById = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::findById::Profile::nowasteboards"];
+          var action = TargetResource["::findById::Profile::noWasteBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.nowasteboards#link
-         * @methodOf lbServices.Profile.nowasteboards
+         * @name lbServices.Profile.noWasteBoards#link
+         * @methodOf lbServices.Profile.noWasteBoards
          *
          * @description
          *
-         * Add a related item by id for nowasteboards.
+         * Add a related item by id for noWasteBoards.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - User id
          *
-         *  - `fk` – `{*}` - Foreign key for nowasteboards
+         *  - `fk` – `{*}` - Foreign key for noWasteBoards
          *
          * @param {Object} postData Request data.
          *
@@ -7955,26 +7730,26 @@ module.factory(
          * This usually means the response is a `NoWasteBoard` object.)
          * </em>
          */
-        R.nowasteboards.link = function() {
+        R.noWasteBoards.link = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::link::Profile::nowasteboards"];
+          var action = TargetResource["::link::Profile::noWasteBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.nowasteboards#unlink
-         * @methodOf lbServices.Profile.nowasteboards
+         * @name lbServices.Profile.noWasteBoards#unlink
+         * @methodOf lbServices.Profile.noWasteBoards
          *
          * @description
          *
-         * Remove the nowasteboards relation to an item by id.
+         * Remove the noWasteBoards relation to an item by id.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - User id
          *
-         *  - `fk` – `{*}` - Foreign key for nowasteboards
+         *  - `fk` – `{*}` - Foreign key for noWasteBoards
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -7988,26 +7763,26 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.nowasteboards.unlink = function() {
+        R.noWasteBoards.unlink = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::unlink::Profile::nowasteboards"];
+          var action = TargetResource["::unlink::Profile::noWasteBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.nowasteboards#updateById
-         * @methodOf lbServices.Profile.nowasteboards
+         * @name lbServices.Profile.noWasteBoards#updateById
+         * @methodOf lbServices.Profile.noWasteBoards
          *
          * @description
          *
-         * Update a related item by id for nowasteboards.
+         * Update a related item by id for noWasteBoards.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - User id
          *
-         *  - `fk` – `{*}` - Foreign key for nowasteboards
+         *  - `fk` – `{*}` - Foreign key for noWasteBoards
          *
          * @param {Object} postData Request data.
          *
@@ -8028,34 +7803,34 @@ module.factory(
          * This usually means the response is a `NoWasteBoard` object.)
          * </em>
          */
-        R.nowasteboards.updateById = function() {
+        R.noWasteBoards.updateById = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::updateById::Profile::nowasteboards"];
+          var action = TargetResource["::updateById::Profile::noWasteBoards"];
           return action.apply(R, arguments);
         };
     /**
      * @ngdoc object
-     * @name lbServices.Profile.dailyboards
-     * @header lbServices.Profile.dailyboards
+     * @name lbServices.Profile.dailyBoards
+     * @header lbServices.Profile.dailyBoards
      * @object
      * @description
      *
-     * The object `Profile.dailyboards` groups methods
+     * The object `Profile.dailyBoards` groups methods
      * manipulating `DailyBoard` instances related to `Profile`.
      *
-     * Call {@link lbServices.Profile#dailyboards Profile.dailyboards()}
+     * Call {@link lbServices.Profile#dailyBoards Profile.dailyBoards()}
      * to query all related instances.
      */
 
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile#dailyboards
+         * @name lbServices.Profile#dailyBoards
          * @methodOf lbServices.Profile
          *
          * @description
          *
-         * Queries dailyboards of Profile.
+         * Queries dailyBoards of Profile.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -8078,20 +7853,20 @@ module.factory(
          * This usually means the response is a `DailyBoard` object.)
          * </em>
          */
-        R.dailyboards = function() {
+        R.dailyBoards = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::get::Profile::dailyboards"];
+          var action = TargetResource["::get::Profile::dailyBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.dailyboards#count
-         * @methodOf lbServices.Profile.dailyboards
+         * @name lbServices.Profile.dailyBoards#count
+         * @methodOf lbServices.Profile.dailyBoards
          *
          * @description
          *
-         * Counts dailyboards of Profile.
+         * Counts dailyBoards of Profile.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -8113,20 +7888,20 @@ module.factory(
          *
          *  - `count` – `{number=}` - 
          */
-        R.dailyboards.count = function() {
+        R.dailyBoards.count = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::count::Profile::dailyboards"];
+          var action = TargetResource["::count::Profile::dailyBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.dailyboards#create
-         * @methodOf lbServices.Profile.dailyboards
+         * @name lbServices.Profile.dailyBoards#create
+         * @methodOf lbServices.Profile.dailyBoards
          *
          * @description
          *
-         * Creates a new instance in dailyboards of this model.
+         * Creates a new instance in dailyBoards of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -8151,20 +7926,20 @@ module.factory(
          * This usually means the response is a `DailyBoard` object.)
          * </em>
          */
-        R.dailyboards.create = function() {
+        R.dailyBoards.create = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::create::Profile::dailyboards"];
+          var action = TargetResource["::create::Profile::dailyBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.dailyboards#createMany
-         * @methodOf lbServices.Profile.dailyboards
+         * @name lbServices.Profile.dailyBoards#createMany
+         * @methodOf lbServices.Profile.dailyBoards
          *
          * @description
          *
-         * Creates a new instance in dailyboards of this model.
+         * Creates a new instance in dailyBoards of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -8189,20 +7964,20 @@ module.factory(
          * This usually means the response is a `DailyBoard` object.)
          * </em>
          */
-        R.dailyboards.createMany = function() {
+        R.dailyBoards.createMany = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::createMany::Profile::dailyboards"];
+          var action = TargetResource["::createMany::Profile::dailyBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.dailyboards#destroyAll
-         * @methodOf lbServices.Profile.dailyboards
+         * @name lbServices.Profile.dailyBoards#destroyAll
+         * @methodOf lbServices.Profile.dailyBoards
          *
          * @description
          *
-         * Deletes all dailyboards of this model.
+         * Deletes all dailyBoards of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -8220,26 +7995,26 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.dailyboards.destroyAll = function() {
+        R.dailyBoards.destroyAll = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::delete::Profile::dailyboards"];
+          var action = TargetResource["::delete::Profile::dailyBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.dailyboards#destroyById
-         * @methodOf lbServices.Profile.dailyboards
+         * @name lbServices.Profile.dailyBoards#destroyById
+         * @methodOf lbServices.Profile.dailyBoards
          *
          * @description
          *
-         * Delete a related item by id for dailyboards.
+         * Delete a related item by id for dailyBoards.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - User id
          *
-         *  - `fk` – `{*}` - Foreign key for dailyboards
+         *  - `fk` – `{*}` - Foreign key for dailyBoards
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -8253,26 +8028,26 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.dailyboards.destroyById = function() {
+        R.dailyBoards.destroyById = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::destroyById::Profile::dailyboards"];
+          var action = TargetResource["::destroyById::Profile::dailyBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.dailyboards#exists
-         * @methodOf lbServices.Profile.dailyboards
+         * @name lbServices.Profile.dailyBoards#exists
+         * @methodOf lbServices.Profile.dailyBoards
          *
          * @description
          *
-         * Check the existence of dailyboards relation to an item by id.
+         * Check the existence of dailyBoards relation to an item by id.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - User id
          *
-         *  - `fk` – `{*}` - Foreign key for dailyboards
+         *  - `fk` – `{*}` - Foreign key for dailyBoards
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -8289,26 +8064,26 @@ module.factory(
          * This usually means the response is a `DailyBoard` object.)
          * </em>
          */
-        R.dailyboards.exists = function() {
+        R.dailyBoards.exists = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::exists::Profile::dailyboards"];
+          var action = TargetResource["::exists::Profile::dailyBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.dailyboards#findById
-         * @methodOf lbServices.Profile.dailyboards
+         * @name lbServices.Profile.dailyBoards#findById
+         * @methodOf lbServices.Profile.dailyBoards
          *
          * @description
          *
-         * Find a related item by id for dailyboards.
+         * Find a related item by id for dailyBoards.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - User id
          *
-         *  - `fk` – `{*}` - Foreign key for dailyboards
+         *  - `fk` – `{*}` - Foreign key for dailyBoards
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -8325,26 +8100,26 @@ module.factory(
          * This usually means the response is a `DailyBoard` object.)
          * </em>
          */
-        R.dailyboards.findById = function() {
+        R.dailyBoards.findById = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::findById::Profile::dailyboards"];
+          var action = TargetResource["::findById::Profile::dailyBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.dailyboards#link
-         * @methodOf lbServices.Profile.dailyboards
+         * @name lbServices.Profile.dailyBoards#link
+         * @methodOf lbServices.Profile.dailyBoards
          *
          * @description
          *
-         * Add a related item by id for dailyboards.
+         * Add a related item by id for dailyBoards.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - User id
          *
-         *  - `fk` – `{*}` - Foreign key for dailyboards
+         *  - `fk` – `{*}` - Foreign key for dailyBoards
          *
          * @param {Object} postData Request data.
          *
@@ -8365,26 +8140,26 @@ module.factory(
          * This usually means the response is a `DailyBoard` object.)
          * </em>
          */
-        R.dailyboards.link = function() {
+        R.dailyBoards.link = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::link::Profile::dailyboards"];
+          var action = TargetResource["::link::Profile::dailyBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.dailyboards#unlink
-         * @methodOf lbServices.Profile.dailyboards
+         * @name lbServices.Profile.dailyBoards#unlink
+         * @methodOf lbServices.Profile.dailyBoards
          *
          * @description
          *
-         * Remove the dailyboards relation to an item by id.
+         * Remove the dailyBoards relation to an item by id.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - User id
          *
-         *  - `fk` – `{*}` - Foreign key for dailyboards
+         *  - `fk` – `{*}` - Foreign key for dailyBoards
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -8398,26 +8173,26 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.dailyboards.unlink = function() {
+        R.dailyBoards.unlink = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::unlink::Profile::dailyboards"];
+          var action = TargetResource["::unlink::Profile::dailyBoards"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Profile.dailyboards#updateById
-         * @methodOf lbServices.Profile.dailyboards
+         * @name lbServices.Profile.dailyBoards#updateById
+         * @methodOf lbServices.Profile.dailyBoards
          *
          * @description
          *
-         * Update a related item by id for dailyboards.
+         * Update a related item by id for dailyBoards.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - User id
          *
-         *  - `fk` – `{*}` - Foreign key for dailyboards
+         *  - `fk` – `{*}` - Foreign key for dailyBoards
          *
          * @param {Object} postData Request data.
          *
@@ -8438,9 +8213,9 @@ module.factory(
          * This usually means the response is a `DailyBoard` object.)
          * </em>
          */
-        R.dailyboards.updateById = function() {
+        R.dailyBoards.updateById = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::updateById::Profile::dailyboards"];
+          var action = TargetResource["::updateById::Profile::dailyBoards"];
           return action.apply(R, arguments);
         };
 
@@ -8478,9 +8253,9 @@ module.factory(
           method: "GET"
         },
 
-        // INTERNAL. Use NoWasteBoardSubscription.nowasteboard() instead.
-        "prototype$__get__nowasteboard": {
-          url: urlBase + "/NoWasteBoardSubscriptions/:id/nowasteboard",
+        // INTERNAL. Use NoWasteBoardSubscription.noWasteBoard() instead.
+        "prototype$__get__noWasteBoard": {
+          url: urlBase + "/NoWasteBoardSubscriptions/:id/noWasteBoard",
           method: "GET"
         },
 
@@ -9086,12 +8861,12 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.NoWasteBoardSubscription#nowasteboard
+         * @name lbServices.NoWasteBoardSubscription#noWasteBoard
          * @methodOf lbServices.NoWasteBoardSubscription
          *
          * @description
          *
-         * Fetches belongsTo relation nowasteboard.
+         * Fetches belongsTo relation noWasteBoard.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -9114,9 +8889,9 @@ module.factory(
          * This usually means the response is a `NoWasteBoard` object.)
          * </em>
          */
-        R.nowasteboard = function() {
+        R.noWasteBoard = function() {
           var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::get::NoWasteBoardSubscription::nowasteboard"];
+          var action = TargetResource["::get::NoWasteBoardSubscription::noWasteBoard"];
           return action.apply(R, arguments);
         };
 
@@ -9154,9 +8929,9 @@ module.factory(
           method: "GET"
         },
 
-        // INTERNAL. Use DailyBoardSubscription.dailyboard() instead.
-        "prototype$__get__dailyboard": {
-          url: urlBase + "/DailyBoardSubscriptions/:id/dailyboard",
+        // INTERNAL. Use DailyBoardSubscription.dailyBoard() instead.
+        "prototype$__get__dailyBoard": {
+          url: urlBase + "/DailyBoardSubscriptions/:id/dailyBoard",
           method: "GET"
         },
 
@@ -9762,12 +9537,12 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.DailyBoardSubscription#dailyboard
+         * @name lbServices.DailyBoardSubscription#dailyBoard
          * @methodOf lbServices.DailyBoardSubscription
          *
          * @description
          *
-         * Fetches belongsTo relation dailyboard.
+         * Fetches belongsTo relation dailyBoard.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -9790,674 +9565,9 @@ module.factory(
          * This usually means the response is a `DailyBoard` object.)
          * </em>
          */
-        R.dailyboard = function() {
+        R.dailyBoard = function() {
           var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::get::DailyBoardSubscription::dailyboard"];
-          return action.apply(R, arguments);
-        };
-
-    return R;
-  }]);
-
-/**
- * @ngdoc object
- * @name lbServices.Address
- * @header lbServices.Address
- * @object
- *
- * @description
- *
- * A $resource object for interacting with the `Address` model.
- *
- * ## Example
- *
- * See
- * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
- * for an example of using this object.
- *
- */
-module.factory(
-  "Address",
-  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
-    var R = Resource(
-      urlBase + "/Addresses/:id",
-      { 'id': '@id' },
-      {
-
-        // INTERNAL. Use Address.shop() instead.
-        "prototype$__get__shop": {
-          url: urlBase + "/Addresses/:id/shop",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#create
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Create a new instance of the model and persist it into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Address` object.)
-         * </em>
-         */
-        "create": {
-          url: urlBase + "/Addresses",
-          method: "POST"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#createMany
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Create a new instance of the model and persist it into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Address` object.)
-         * </em>
-         */
-        "createMany": {
-          isArray: true,
-          url: urlBase + "/Addresses",
-          method: "POST"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#upsert
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Update an existing model instance or insert a new one into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Address` object.)
-         * </em>
-         */
-        "upsert": {
-          url: urlBase + "/Addresses",
-          method: "PUT"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#exists
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Check whether a model instance exists in the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `exists` – `{boolean=}` - 
-         */
-        "exists": {
-          url: urlBase + "/Addresses/:id/exists",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#findById
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Find a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         *  - `filter` – `{object=}` - Filter defining fields and include
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Address` object.)
-         * </em>
-         */
-        "findById": {
-          url: urlBase + "/Addresses/:id",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#find
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Find all instances of the model matched by filter from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Address` object.)
-         * </em>
-         */
-        "find": {
-          isArray: true,
-          url: urlBase + "/Addresses",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#findOne
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Find first instance of the model matched by filter from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Address` object.)
-         * </em>
-         */
-        "findOne": {
-          url: urlBase + "/Addresses/findOne",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#updateAll
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Update instances of the model matched by where from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * The number of instances updated
-         */
-        "updateAll": {
-          url: urlBase + "/Addresses/update",
-          method: "POST"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#deleteById
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Delete a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Address` object.)
-         * </em>
-         */
-        "deleteById": {
-          url: urlBase + "/Addresses/:id",
-          method: "DELETE"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#count
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Count instances of the model matched by where from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `count` – `{number=}` - 
-         */
-        "count": {
-          url: urlBase + "/Addresses/count",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#prototype$updateAttributes
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Update attributes for a model instance and persist it into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Address` object.)
-         * </em>
-         */
-        "prototype$updateAttributes": {
-          url: urlBase + "/Addresses/:id",
-          method: "PUT"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#createChangeStream
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Create a change stream.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         *  - `options` – `{object=}` - 
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `changes` – `{ReadableStream=}` - 
-         */
-        "createChangeStream": {
-          url: urlBase + "/Addresses/change-stream",
-          method: "POST"
-        },
-
-        // INTERNAL. Use Shop.address() instead.
-        "::get::Shop::address": {
-          url: urlBase + "/Shops/:id/address",
-          method: "GET"
-        },
-
-        // INTERNAL. Use Shop.address.create() instead.
-        "::create::Shop::address": {
-          url: urlBase + "/Shops/:id/address",
-          method: "POST"
-        },
-
-        // INTERNAL. Use Shop.address.createMany() instead.
-        "::createMany::Shop::address": {
-          isArray: true,
-          url: urlBase + "/Shops/:id/address",
-          method: "POST"
-        },
-
-        // INTERNAL. Use Shop.address.update() instead.
-        "::update::Shop::address": {
-          url: urlBase + "/Shops/:id/address",
-          method: "PUT"
-        },
-
-        // INTERNAL. Use Shop.address.destroy() instead.
-        "::destroy::Shop::address": {
-          url: urlBase + "/Shops/:id/address",
-          method: "DELETE"
-        },
-      }
-    );
-
-
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#updateOrCreate
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Update an existing model instance or insert a new one into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Address` object.)
-         * </em>
-         */
-        R["updateOrCreate"] = R["upsert"];
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#update
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Update instances of the model matched by where from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * The number of instances updated
-         */
-        R["update"] = R["updateAll"];
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#destroyById
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Delete a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Address` object.)
-         * </em>
-         */
-        R["destroyById"] = R["deleteById"];
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#removeById
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Delete a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Address` object.)
-         * </em>
-         */
-        R["removeById"] = R["deleteById"];
-
-
-    /**
-    * @ngdoc property
-    * @name lbServices.Address#modelName
-    * @propertyOf lbServices.Address
-    * @description
-    * The name of the model represented by this $resource,
-    * i.e. `Address`.
-    */
-    R.modelName = "Address";
-
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Address#shop
-         * @methodOf lbServices.Address
-         *
-         * @description
-         *
-         * Fetches belongsTo relation shop.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `refresh` – `{boolean=}` - 
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Shop` object.)
-         * </em>
-         */
-        R.shop = function() {
-          var TargetResource = $injector.get("Shop");
-          var action = TargetResource["::get::Address::shop"];
+          var action = TargetResource["::get::DailyBoardSubscription::dailyBoard"];
           return action.apply(R, arguments);
         };
 

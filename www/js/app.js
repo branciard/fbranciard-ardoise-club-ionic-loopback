@@ -114,7 +114,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','l
     views: {
       'tab-dailyboards': {
         templateUrl: 'templates/tab-dailyboards.html',
-        controller: 'DailyBoardCtrl' 
+        controller: 'DailyBoardsCtrl' 
       }
     }
   })
@@ -129,7 +129,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','l
     url: '/dailyboard',
     views: {
       'tab-owner-dailyboard': {
-        templateUrl: 'templates/tab-owner-dailyboard.html'
+        templateUrl: 'templates/tab-owner-dailyboard.html',
+        controller: 'DailyBoardCtrl' 
       }
     }
   })

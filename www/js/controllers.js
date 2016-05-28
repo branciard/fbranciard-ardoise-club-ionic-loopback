@@ -57,10 +57,9 @@ angular.module('starter.controllers', [])
     
 })
 
-.controller('ProfileCtrl', function($scope,$rootScope,$ionicModal,Profile,Shop,Address,DailyBoard) {
+.controller('ProfileCtrl', function($scope,$rootScope,$ionicModal,Profile,Shop,DailyBoard) {
 	
 	$scope.shopData = {};
-	$scope.addressData = {};
     $ionicModal.fromTemplateUrl('templates/addShopModal.html', {
         scope: $scope
     }).then(function (modal) {
@@ -78,30 +77,20 @@ angular.module('starter.controllers', [])
     
     $scope.addShop = function () {
         console.log('addShop', $scope.shopData);
-        console.log('addShop with address', $scope.addressData);
-    
         $scope.newShop =Profile.shop.create({ id: $rootScope.currentProfile.id },$scope.shopData
         		, function() {
         	  console.log('shop created:')
         	  Profile.prototype$updateAttributes({ id: $rootScope.currentProfile.id }, 
         			  { shopId: $scope.newShop.id });
-            $scope.newAddress =Shop.address.create(
+            
+            $scope.newDailyBoard =Shop.dailyBoard.create(
           		  { id: $scope.newShop.id },
-          		  $scope.addressData, function() {
-          			$scope.newShop.addressId=$scope.newAddress.id;
+          		  { title: ' Jazz menu today !'}, function() {
+          			$scope.newShop.dailyBoardId=$scope.newDailyBoard.id;
           			$scope.newShop.$save();
  		  
-                      console.log('address created and link to shop')
+                      console.log('daily board created and link to shop')
                   });
-            
-            $scope.newDailyBoard =Shop.dailyboard.create(
-            		  { id: $scope.newShop.id },
-            		  { title: ' Jazz menu today !'}, function() {
-            			$scope.newShop.dailyBoardId=$scope.newDailyBoard.id;
-            			$scope.newShop.$save();
-   		  
-                        console.log('daily board created and link to shop')
-                    });
 
           });		
         
@@ -110,11 +99,75 @@ angular.module('starter.controllers', [])
     };
 	
 })
-.controller('DailyBoardCtrl', function($scope,$rootScope,DailyBoardSubscription) {
+.controller('DailyBoardsCtrl', function($scope,$rootScope,DailyBoardSubscription) {
 	$scope.subscriptionData = {};
-	$scope.subscribe = function () {
+	$scope.doSubscribe = function () {
 		DailyBoardSubscription.create({ profileId:$rootScope.currentProfile.id , dailyBoardId:$scope.subscriptionData.dailyBoardId });
-		console.log('DailyBoardSubscription created !')
+		console.log('DailyBoardSubscription created !');
+	}
+	
+})
+
+.controller('DailyBoardCtrl', function($scope,$rootScope,Profile,Shop,DailyBoard) {
+	$scope.dailyItemData = {};
+
+	
+	/*$scope.theProfile = Profile.findById({id: $rootScope.currentProfile.id})
+    .$promise.then(
+        function (response) {
+        	$scope.theProfile = response;
+        	console.log($scope.theProfile.id);
+        },
+        function (response) {
+        	console.log("Error: " + response.status + " " + response.statusText);
+        }
+    ); 
+	
+	Profile.shop({id:$rootScope.currentProfile.id, "filter":
+    {}
+	})
+    .$promise.then(
+    function (response) {
+    	$scope.theshop = response;
+    	console.log($scope.theshop.id);
+    },
+    function (response) {
+    	console.log("Error: " + response.status + " " + response.statusText);
+    });
+	*/
+	
+
+	
+
+	$scope.addDailyItem = function () {
+		console.log($rootScope.currentProfile.id);
+	
+		
+		
+		Profile.shop({id:$rootScope.currentProfile.id
+		})
+	    .$promise.then(
+	    function (response) {
+	    	$scope.theshop = response;
+	    	console.log($scope.theshop.id);
+	    	Shop.dailyBoard({id:$scope.theshop.id
+			})  .$promise.then(
+				    function (response) {
+				    	$scope.thedailyBoard = response;
+				    	console.log($scope.thedailyBoard.id);
+				    	
+				    	DailyBoard.dailyItems.create( { id: $scope.thedailyBoard.id },{ name:$scope.dailyItemData.name, price:$scope.dailyItemData.price, itemPosition:'1'});
+				    	console.log('dailyItemList added !');
+				    	
+				    },
+				    function (response) {
+				    	console.log("Error: " + response.status + " " + response.statusText);
+				    });
+	    },
+	    function (response) {
+	    	console.log("Error: " + response.status + " " + response.statusText);
+	    });
+		
 	}
 	
 })
