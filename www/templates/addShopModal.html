@@ -1,0 +1,45 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Add shop</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeAddShopModal()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="addShop()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Shop name</span>
+          <input type="text" ng-model="shopData.name">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Category</span>
+          <input type="text" ng-model="shopData.category">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">telephon</span>
+          <input type="tel" ng-model="shopData.tel">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Street</span>
+          <input type="text" ng-model="addressData.street">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">city</span>
+          <input type="text" ng-model="addressData.city">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">zipcode</span>
+          <input type="text" ng-model="addressData.zipcode">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">state</span>
+          <input type="text" ng-model="addressData.state">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Add Shop</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

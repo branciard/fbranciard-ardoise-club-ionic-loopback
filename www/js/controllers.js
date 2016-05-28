@@ -32,10 +32,54 @@ angular.module('starter.controllers', [])
     	 console.log('login:Successful');
         $scope.loggedIn = AuthService.isAuthenticated();
         $scope.username = AuthService.getUsername();
-        $state.go('tab.dash');
+        $state.go('tab.profile');
     });
     
+})
+
+.controller('ProfileCtrl', function($scope,$rootScope,$ionicModal,Profile,Shop,Address) {
 	
+	$scope.shopData = {};
+	$scope.addressData = {};
+    $ionicModal.fromTemplateUrl('templates/addShopModal.html', {
+        scope: $scope
+    }).then(function (modal) {
+        $scope.addShopModal = modal;
+    });
+	
+   
+    $scope.closeAddShopModal = function () {
+        $scope.addShopModal.hide();
+    };
+
+    $scope.openAddShopModal = function () {
+        $scope.addShopModal.show();
+    };
+    
+    $scope.addShop = function () {
+        console.log('addShop', $scope.shopData);
+        console.log('addShop with address', $scope.addressData);
+    
+        $scope.newShop =Profile.shop.create({ id: $rootScope.currentProfile.id },$scope.shopData
+        		, function() {
+        	  console.log('shop created:')
+            $scope.newAddress =Shop.address.create(
+          		  { id: $scope.newShop.id },
+          		  $scope.addressData, function() {
+          			$scope.newShop.addressId=$scope.newAddress.id;
+          			$scope.newShop.$save();
+          		
+          			//Address.shop({id:$scope.newAddress.id},{shopId:$scope.newShop.id});
+          			//Address.shop.create({id:$scope.newAddress.id},{id:$scope.newShop.id});
+ 		  
+                      console.log('address created and link to shop')
+                  }) 
+
+          });		
+        
+ 
+        $scope.closeAddShopModal();
+    };
 	
 })
 .controller('DashCtrl', function($scope) {})

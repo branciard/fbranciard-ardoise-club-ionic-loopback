@@ -152,7 +152,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','l
     url: '/profile',
     views: {
       'tab-owner-profile': {
-        templateUrl: 'templates/tab-owner-profile.html'
+        templateUrl: 'templates/tab-owner-profile.html',
+        controller: 'ProfileCtrl'
       }
     }
   })
@@ -161,6 +162,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','l
   ;
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('tab-owner/dailyboard');
+  $urlRouterProvider.otherwise('login');
 
 });

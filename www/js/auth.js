@@ -10,7 +10,7 @@ angular
         .login(loginData)
         .$promise
         .then(function(response) {
-          $rootScope.currentUser = {
+          $rootScope.currentProfile = {
             id: response.user.id,
             tokenId: response.id,
             username: loginData.username
