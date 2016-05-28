@@ -4,6 +4,7 @@ angular.module('starter.controllers', [])
 .controller('loginCtrl', function($scope,$rootScope,$state,$localStorage,AuthService) {
     // Form data for the login modal
     $scope.loginData = $localStorage.getObject('userinfo','{}');
+    $scope.registration = {};
     $scope.loggedIn = false;
        
     if(AuthService.isAuthenticated()) {
@@ -35,9 +36,28 @@ angular.module('starter.controllers', [])
         $state.go('tab.profile');
     });
     
+    
+    // Perform the login action when the user submits the login form
+    $scope.doRegister = function () {
+        console.log('Doing registration', $scope.registration);
+        $scope.loginData.username = $scope.registration.username;
+        $scope.loginData.password = $scope.registration.password;
+
+        AuthService.register($scope.registration);
+
+    };
+       
+    $rootScope.$on('registration:Successful', function () {
+        $localStorage.storeObject('userinfo',$scope.loginData);
+        $state.go('tab.profile');
+    });
+    
+    
+    
+    
 })
 
-.controller('ProfileCtrl', function($scope,$rootScope,$ionicModal,Profile,Shop,Address) {
+.controller('ProfileCtrl', function($scope,$rootScope,$ionicModal,Profile,Shop,Address,DailyBoard) {
 	
 	$scope.shopData = {};
 	$scope.addressData = {};
@@ -63,23 +83,39 @@ angular.module('starter.controllers', [])
         $scope.newShop =Profile.shop.create({ id: $rootScope.currentProfile.id },$scope.shopData
         		, function() {
         	  console.log('shop created:')
+        	  Profile.prototype$updateAttributes({ id: $rootScope.currentProfile.id }, 
+        			  { shopId: $scope.newShop.id });
             $scope.newAddress =Shop.address.create(
           		  { id: $scope.newShop.id },
           		  $scope.addressData, function() {
           			$scope.newShop.addressId=$scope.newAddress.id;
           			$scope.newShop.$save();
-          		
-          			//Address.shop({id:$scope.newAddress.id},{shopId:$scope.newShop.id});
-          			//Address.shop.create({id:$scope.newAddress.id},{id:$scope.newShop.id});
  		  
                       console.log('address created and link to shop')
-                  }) 
+                  });
+            
+            $scope.newDailyBoard =Shop.dailyboard.create(
+            		  { id: $scope.newShop.id },
+            		  { title: ' Jazz menu today !'}, function() {
+            			$scope.newShop.dailyBoardId=$scope.newDailyBoard.id;
+            			$scope.newShop.$save();
+   		  
+                        console.log('daily board created and link to shop')
+                    });
 
           });		
         
  
         $scope.closeAddShopModal();
     };
+	
+})
+.controller('DailyBoardCtrl', function($scope,$rootScope,DailyBoardSubscription) {
+	$scope.subscriptionData = {};
+	$scope.subscribe = function () {
+		DailyBoardSubscription.create({ profileId:$rootScope.currentProfile.id , dailyBoardId:$scope.subscriptionData.dailyBoardId });
+		console.log('DailyBoardSubscription created !')
+	}
 	
 })
 .controller('DashCtrl', function($scope) {})

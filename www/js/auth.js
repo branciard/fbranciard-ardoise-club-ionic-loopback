@@ -34,7 +34,7 @@ angular
     }
       
     function isAuthenticated() {
-        if ($rootScope.currentUser) {
+        if ($rootScope.currentProfile) {
             return true;
         }
         else{
@@ -43,7 +43,7 @@ angular
     }
       
     function getUsername() {
-        return $rootScope.currentUser.username;
+        return $rootScope.currentProfile.username;
     }
 
     function logout() {
@@ -51,7 +51,7 @@ angular
        .logout()
        .$promise
        .then(function() {
-         $rootScope.currentUser = null;
+         $rootScope.currentProfile = null;
        });
     }
 

@@ -2,7 +2,21 @@
   <ion-content class="padding">
     <h2>Welcome daily boards page</h2>
     <p>
-    This is the daily boards  page
+    This is the daily boards  page:
+    
+    
+          <form ng-submit="doSubscribe()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">je veux m'inscrire au dailyboardId suivant</span>
+          <input type="text" ng-model="subscriptionData.dailyBoardId">
+        </label>
+
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Subscribe</button>
+        </label>
+      </div>
+    </form>
     </p>>
   </ion-content>
 </ion-view>

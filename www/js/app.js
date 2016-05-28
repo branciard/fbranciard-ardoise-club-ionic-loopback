@@ -113,7 +113,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','l
     url: '/dailyboards',
     views: {
       'tab-dailyboards': {
-        templateUrl: 'templates/tab-dailyboards.html'
+        templateUrl: 'templates/tab-dailyboards.html',
+        controller: 'DailyBoardCtrl' 
       }
     }
   })
