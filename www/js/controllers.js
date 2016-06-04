@@ -33,7 +33,7 @@ angular.module('starter.controllers', [])
     	 console.log('login:Successful');
         $scope.loggedIn = AuthService.isAuthenticated();
         $scope.username = AuthService.getUsername();
-        $state.go('tab.profile');
+        $state.go('user-tabs.user-profile-tab');
     });
     
     
@@ -49,7 +49,7 @@ angular.module('starter.controllers', [])
        
     $rootScope.$on('registration:Successful', function () {
         $localStorage.storeObject('userinfo',$scope.loginData);
-        $state.go('tab.profile');
+        $state.go('user-tabs.user-profile-tab');
     });
     
     

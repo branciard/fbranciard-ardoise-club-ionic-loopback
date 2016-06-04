@@ -38,16 +38,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','l
     })
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
+    .state('user-tabs', {
+    url: '/user-tabs',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'templates/user-tabs.html'
   })
 
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
+  .state('user-tabs.dash', {
     url: '/dash',
     views: {
       'tab-dash': {
@@ -57,7 +57,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','l
     }
   })
 
-  .state('tab.chats', {
+  .state('user-tabs.chats', {
       url: '/chats',
       views: {
         'tab-chats': {
@@ -66,7 +66,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','l
         }
       }
     })
-    .state('tab.chat-detail', {
+    .state('user-tabs.chat-detail', {
       url: '/chats/:chatId',
       views: {
         'tab-chats': {
@@ -76,7 +76,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','l
       }
     })
 
-  .state('tab.account', {
+  .state('user-tabs.account', {
     url: '/account',
     views: {
       'tab-account': {
@@ -85,76 +85,76 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','l
       }
     }
   })
-  .state('tab.profile', {
-    url: '/profile',
+  .state('user-tabs.user-profile-tab', {
+    url: '/user-profile-tab',
     views: {
-      'tab-profile': {
-        templateUrl: 'templates/tab-profile.html'
+      'user-profile-tab': {
+        templateUrl: 'templates/user-profile-tab.html'
       }
     }
   })
-  .state('tab.search', {
-    url: '/search',
+  .state('user-tabs.user-search-tab', {
+    url: '/user-search-tab',
     views: {
-      'tab-search': {
-        templateUrl: 'templates/tab-search.html'
+      'user-search-tab': {
+        templateUrl: 'templates/user-search-tab.html'
       }
     }
   })
-    .state('tab.nowasteboards', {
-    url: '/nowasteboards',
+    .state('user-tabs.user-nowasteboards-tab', {
+    url: '/user-nowasteboards-tab',
     views: {
-      'tab-nowasteboards': {
-        templateUrl: 'templates/tab-nowasteboards.html'
+      'user-nowasteboards-tab': {
+        templateUrl: 'templates/user-nowasteboards-tab.html'
       }
     }
   })
-     .state('tab.dailyboards', {
-    url: '/dailyboards',
+     .state('user-tabs.user-dailyboards-tab', {
+    url: '/user-dailyboards-tab',
     views: {
-      'tab-dailyboards': {
-        templateUrl: 'templates/tab-dailyboards.html',
+      'user-dailyboards-tab': {
+        templateUrl: 'templates/user-dailyboards-tab.html',
         controller: 'DailyBoardsCtrl' 
       }
     }
   })
   
   
-      .state('tab-owner', {
-    url: '/tab-owner',
+      .state('owner-tabs', {
+    url: '/owner-tabs',
     abstract: true,
-    templateUrl: 'templates/tabs-owner.html'
+    templateUrl: 'templates/owner-tabs.html'
   })
-   .state('tab-owner.dailyboard', {
-    url: '/dailyboard',
+   .state('owner-tabs.owner-dailyboard-tab', {
+    url: '/owner-dailyboard-tab',
     views: {
-      'tab-owner-dailyboard': {
-        templateUrl: 'templates/tab-owner-dailyboard.html',
+      'owner-dailyboard-tab': {
+        templateUrl: 'templates/owner-dailyboard-tab.html',
         controller: 'DailyBoardCtrl' 
       }
     }
   })
-     .state('tab-owner.nowasteboard', {
-    url: '/nowasteboard',
+     .state('owner-tabs.owner-nowasteboard-tab', {
+    url: '/owner-nowasteboard-tab',
     views: {
-      'tab-owner-nowasteboard': {
-        templateUrl: 'templates/tab-owner-nowasteboard.html'
+      'owner-nowasteboard-tab': {
+        templateUrl: 'templates/owner-nowasteboard-tab.html'
       }
     }
   })
-       .state('tab-owner.clients', {
-    url: '/clients',
+       .state('owner-tabs.owner-clients-tab', {
+    url: '/owner-clients-tab',
     views: {
-      'tab-owner-clients': {
-        templateUrl: 'templates/tab-owner-clients.html'
+      'owner-clients-tab': {
+        templateUrl: 'templates/owner-clients-tab.html'
       }
     }
   })
-         .state('tab-owner.profile', {
-    url: '/profile',
+         .state('owner-tabs.owner-profile-tab', {
+    url: '/owner-profile-tab',
     views: {
-      'tab-owner-profile': {
-        templateUrl: 'templates/tab-owner-profile.html',
+      'owner-profile-tab': {
+        templateUrl: 'templates/owner-profile-tab.html',
         controller: 'ProfileCtrl'
       }
     }
