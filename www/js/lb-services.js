@@ -58,7 +58,36 @@ module.factory(
       { 'id': '@id' },
       {
 
-        // INTERNAL. Use DailyBoard.dailyItems.findById() instead.
+        /**
+         * @ngdoc method
+         * @name lbServices.DailyBoard#prototype$__findById__dailyItems
+         * @methodOf lbServices.DailyBoard
+         *
+         * @description
+         *
+         * Find a related item by id for dailyItems.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for dailyItems
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `DailyBoard` object.)
+         * </em>
+         */
         "prototype$__findById__dailyItems": {
           params: {
           'fk': '@fk'
@@ -67,7 +96,33 @@ module.factory(
           method: "GET"
         },
 
-        // INTERNAL. Use DailyBoard.dailyItems.destroyById() instead.
+        /**
+         * @ngdoc method
+         * @name lbServices.DailyBoard#prototype$__destroyById__dailyItems
+         * @methodOf lbServices.DailyBoard
+         *
+         * @description
+         *
+         * Delete a related item by id for dailyItems.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for dailyItems
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
         "prototype$__destroyById__dailyItems": {
           params: {
           'fk': '@fk'
@@ -76,7 +131,40 @@ module.factory(
           method: "DELETE"
         },
 
-        // INTERNAL. Use DailyBoard.dailyItems.updateById() instead.
+        /**
+         * @ngdoc method
+         * @name lbServices.DailyBoard#prototype$__updateById__dailyItems
+         * @methodOf lbServices.DailyBoard
+         *
+         * @description
+         *
+         * Update a related item by id for dailyItems.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for dailyItems
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `DailyBoard` object.)
+         * </em>
+         */
         "prototype$__updateById__dailyItems": {
           params: {
           'fk': '@fk'
@@ -145,26 +233,138 @@ module.factory(
           method: "HEAD"
         },
 
-        // INTERNAL. Use DailyBoard.dailyItems() instead.
+        /**
+         * @ngdoc method
+         * @name lbServices.DailyBoard#prototype$__get__dailyItems
+         * @methodOf lbServices.DailyBoard
+         *
+         * @description
+         *
+         * Queries dailyItems of DailyBoard.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `filter` – `{object=}` - 
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `DailyBoard` object.)
+         * </em>
+         */
         "prototype$__get__dailyItems": {
           isArray: true,
           url: urlBase + "/DailyBoards/:id/dailyItems",
           method: "GET"
         },
 
-        // INTERNAL. Use DailyBoard.dailyItems.create() instead.
+        /**
+         * @ngdoc method
+         * @name lbServices.DailyBoard#prototype$__create__dailyItems
+         * @methodOf lbServices.DailyBoard
+         *
+         * @description
+         *
+         * Creates a new instance in dailyItems of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `DailyBoard` object.)
+         * </em>
+         */
         "prototype$__create__dailyItems": {
           url: urlBase + "/DailyBoards/:id/dailyItems",
           method: "POST"
         },
 
-        // INTERNAL. Use DailyBoard.dailyItems.destroyAll() instead.
+        /**
+         * @ngdoc method
+         * @name lbServices.DailyBoard#prototype$__delete__dailyItems
+         * @methodOf lbServices.DailyBoard
+         *
+         * @description
+         *
+         * Deletes all dailyItems of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
         "prototype$__delete__dailyItems": {
           url: urlBase + "/DailyBoards/:id/dailyItems",
           method: "DELETE"
         },
 
-        // INTERNAL. Use DailyBoard.dailyItems.count() instead.
+        /**
+         * @ngdoc method
+         * @name lbServices.DailyBoard#prototype$__count__dailyItems
+         * @methodOf lbServices.DailyBoard
+         *
+         * @description
+         *
+         * Counts dailyItems of DailyBoard.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
         "prototype$__count__dailyItems": {
           url: urlBase + "/DailyBoards/:id/dailyItems/count",
           method: "GET"
@@ -617,12 +817,6 @@ module.factory(
           method: "POST"
         },
 
-        // INTERNAL. Use DailyItem.dailyBoard() instead.
-        "::get::DailyItem::dailyBoard": {
-          url: urlBase + "/DailyItems/:id/dailyBoard",
-          method: "GET"
-        },
-
         // INTERNAL. Use Shop.dailyBoard() instead.
         "::get::Shop::dailyBoard": {
           url: urlBase + "/Shops/:id/dailyBoard",
@@ -887,307 +1081,6 @@ module.factory(
     */
     R.modelName = "DailyBoard";
 
-    /**
-     * @ngdoc object
-     * @name lbServices.DailyBoard.dailyItems
-     * @header lbServices.DailyBoard.dailyItems
-     * @object
-     * @description
-     *
-     * The object `DailyBoard.dailyItems` groups methods
-     * manipulating `DailyItem` instances related to `DailyBoard`.
-     *
-     * Call {@link lbServices.DailyBoard#dailyItems DailyBoard.dailyItems()}
-     * to query all related instances.
-     */
-
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyBoard#dailyItems
-         * @methodOf lbServices.DailyBoard
-         *
-         * @description
-         *
-         * Queries dailyItems of DailyBoard.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `filter` – `{object=}` - 
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        R.dailyItems = function() {
-          var TargetResource = $injector.get("DailyItem");
-          var action = TargetResource["::get::DailyBoard::dailyItems"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyBoard.dailyItems#count
-         * @methodOf lbServices.DailyBoard.dailyItems
-         *
-         * @description
-         *
-         * Counts dailyItems of DailyBoard.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `count` – `{number=}` - 
-         */
-        R.dailyItems.count = function() {
-          var TargetResource = $injector.get("DailyItem");
-          var action = TargetResource["::count::DailyBoard::dailyItems"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyBoard.dailyItems#create
-         * @methodOf lbServices.DailyBoard.dailyItems
-         *
-         * @description
-         *
-         * Creates a new instance in dailyItems of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        R.dailyItems.create = function() {
-          var TargetResource = $injector.get("DailyItem");
-          var action = TargetResource["::create::DailyBoard::dailyItems"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyBoard.dailyItems#createMany
-         * @methodOf lbServices.DailyBoard.dailyItems
-         *
-         * @description
-         *
-         * Creates a new instance in dailyItems of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        R.dailyItems.createMany = function() {
-          var TargetResource = $injector.get("DailyItem");
-          var action = TargetResource["::createMany::DailyBoard::dailyItems"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyBoard.dailyItems#destroyAll
-         * @methodOf lbServices.DailyBoard.dailyItems
-         *
-         * @description
-         *
-         * Deletes all dailyItems of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        R.dailyItems.destroyAll = function() {
-          var TargetResource = $injector.get("DailyItem");
-          var action = TargetResource["::delete::DailyBoard::dailyItems"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyBoard.dailyItems#destroyById
-         * @methodOf lbServices.DailyBoard.dailyItems
-         *
-         * @description
-         *
-         * Delete a related item by id for dailyItems.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `fk` – `{*}` - Foreign key for dailyItems
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        R.dailyItems.destroyById = function() {
-          var TargetResource = $injector.get("DailyItem");
-          var action = TargetResource["::destroyById::DailyBoard::dailyItems"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyBoard.dailyItems#findById
-         * @methodOf lbServices.DailyBoard.dailyItems
-         *
-         * @description
-         *
-         * Find a related item by id for dailyItems.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `fk` – `{*}` - Foreign key for dailyItems
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        R.dailyItems.findById = function() {
-          var TargetResource = $injector.get("DailyItem");
-          var action = TargetResource["::findById::DailyBoard::dailyItems"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyBoard.dailyItems#updateById
-         * @methodOf lbServices.DailyBoard.dailyItems
-         *
-         * @description
-         *
-         * Update a related item by id for dailyItems.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `fk` – `{*}` - Foreign key for dailyItems
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        R.dailyItems.updateById = function() {
-          var TargetResource = $injector.get("DailyItem");
-          var action = TargetResource["::updateById::DailyBoard::dailyItems"];
-          return action.apply(R, arguments);
-        };
 
         /**
          * @ngdoc method
@@ -1640,699 +1533,6 @@ module.factory(
 
 /**
  * @ngdoc object
- * @name lbServices.DailyItem
- * @header lbServices.DailyItem
- * @object
- *
- * @description
- *
- * A $resource object for interacting with the `DailyItem` model.
- *
- * ## Example
- *
- * See
- * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
- * for an example of using this object.
- *
- */
-module.factory(
-  "DailyItem",
-  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
-    var R = Resource(
-      urlBase + "/DailyItems/:id",
-      { 'id': '@id' },
-      {
-
-        // INTERNAL. Use DailyItem.dailyBoard() instead.
-        "prototype$__get__dailyBoard": {
-          url: urlBase + "/DailyItems/:id/dailyBoard",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#create
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Create a new instance of the model and persist it into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        "create": {
-          url: urlBase + "/DailyItems",
-          method: "POST"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#createMany
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Create a new instance of the model and persist it into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        "createMany": {
-          isArray: true,
-          url: urlBase + "/DailyItems",
-          method: "POST"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#upsert
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Update an existing model instance or insert a new one into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        "upsert": {
-          url: urlBase + "/DailyItems",
-          method: "PUT"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#exists
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Check whether a model instance exists in the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `exists` – `{boolean=}` - 
-         */
-        "exists": {
-          url: urlBase + "/DailyItems/:id/exists",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#findById
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Find a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         *  - `filter` – `{object=}` - Filter defining fields and include
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        "findById": {
-          url: urlBase + "/DailyItems/:id",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#find
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Find all instances of the model matched by filter from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        "find": {
-          isArray: true,
-          url: urlBase + "/DailyItems",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#findOne
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Find first instance of the model matched by filter from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        "findOne": {
-          url: urlBase + "/DailyItems/findOne",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#updateAll
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Update instances of the model matched by where from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * The number of instances updated
-         */
-        "updateAll": {
-          url: urlBase + "/DailyItems/update",
-          method: "POST"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#deleteById
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Delete a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        "deleteById": {
-          url: urlBase + "/DailyItems/:id",
-          method: "DELETE"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#count
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Count instances of the model matched by where from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `count` – `{number=}` - 
-         */
-        "count": {
-          url: urlBase + "/DailyItems/count",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#prototype$updateAttributes
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Update attributes for a model instance and persist it into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        "prototype$updateAttributes": {
-          url: urlBase + "/DailyItems/:id",
-          method: "PUT"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#createChangeStream
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Create a change stream.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         *  - `options` – `{object=}` - 
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `changes` – `{ReadableStream=}` - 
-         */
-        "createChangeStream": {
-          url: urlBase + "/DailyItems/change-stream",
-          method: "POST"
-        },
-
-        // INTERNAL. Use DailyBoard.dailyItems.findById() instead.
-        "::findById::DailyBoard::dailyItems": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/DailyBoards/:id/dailyItems/:fk",
-          method: "GET"
-        },
-
-        // INTERNAL. Use DailyBoard.dailyItems.destroyById() instead.
-        "::destroyById::DailyBoard::dailyItems": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/DailyBoards/:id/dailyItems/:fk",
-          method: "DELETE"
-        },
-
-        // INTERNAL. Use DailyBoard.dailyItems.updateById() instead.
-        "::updateById::DailyBoard::dailyItems": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/DailyBoards/:id/dailyItems/:fk",
-          method: "PUT"
-        },
-
-        // INTERNAL. Use DailyBoard.dailyItems() instead.
-        "::get::DailyBoard::dailyItems": {
-          isArray: true,
-          url: urlBase + "/DailyBoards/:id/dailyItems",
-          method: "GET"
-        },
-
-        // INTERNAL. Use DailyBoard.dailyItems.create() instead.
-        "::create::DailyBoard::dailyItems": {
-          url: urlBase + "/DailyBoards/:id/dailyItems",
-          method: "POST"
-        },
-
-        // INTERNAL. Use DailyBoard.dailyItems.createMany() instead.
-        "::createMany::DailyBoard::dailyItems": {
-          isArray: true,
-          url: urlBase + "/DailyBoards/:id/dailyItems",
-          method: "POST"
-        },
-
-        // INTERNAL. Use DailyBoard.dailyItems.destroyAll() instead.
-        "::delete::DailyBoard::dailyItems": {
-          url: urlBase + "/DailyBoards/:id/dailyItems",
-          method: "DELETE"
-        },
-
-        // INTERNAL. Use DailyBoard.dailyItems.count() instead.
-        "::count::DailyBoard::dailyItems": {
-          url: urlBase + "/DailyBoards/:id/dailyItems/count",
-          method: "GET"
-        },
-      }
-    );
-
-
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#updateOrCreate
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Update an existing model instance or insert a new one into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        R["updateOrCreate"] = R["upsert"];
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#update
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Update instances of the model matched by where from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * The number of instances updated
-         */
-        R["update"] = R["updateAll"];
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#destroyById
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Delete a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        R["destroyById"] = R["deleteById"];
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#removeById
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Delete a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyItem` object.)
-         * </em>
-         */
-        R["removeById"] = R["deleteById"];
-
-
-    /**
-    * @ngdoc property
-    * @name lbServices.DailyItem#modelName
-    * @propertyOf lbServices.DailyItem
-    * @description
-    * The name of the model represented by this $resource,
-    * i.e. `DailyItem`.
-    */
-    R.modelName = "DailyItem";
-
-
-        /**
-         * @ngdoc method
-         * @name lbServices.DailyItem#dailyBoard
-         * @methodOf lbServices.DailyItem
-         *
-         * @description
-         *
-         * Fetches belongsTo relation dailyBoard.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `refresh` – `{boolean=}` - 
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `DailyBoard` object.)
-         * </em>
-         */
-        R.dailyBoard = function() {
-          var TargetResource = $injector.get("DailyBoard");
-          var action = TargetResource["::get::DailyItem::dailyBoard"];
-          return action.apply(R, arguments);
-        };
-
-    return R;
-  }]);
-
-/**
- * @ngdoc object
  * @name lbServices.NoWasteBoard
  * @header lbServices.NoWasteBoard
  * @object
@@ -2356,7 +1556,36 @@ module.factory(
       { 'id': '@id' },
       {
 
-        // INTERNAL. Use NoWasteBoard.noWasteItems.findById() instead.
+        /**
+         * @ngdoc method
+         * @name lbServices.NoWasteBoard#prototype$__findById__noWasteItems
+         * @methodOf lbServices.NoWasteBoard
+         *
+         * @description
+         *
+         * Find a related item by id for noWasteItems.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for noWasteItems
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `NoWasteBoard` object.)
+         * </em>
+         */
         "prototype$__findById__noWasteItems": {
           params: {
           'fk': '@fk'
@@ -2365,7 +1594,33 @@ module.factory(
           method: "GET"
         },
 
-        // INTERNAL. Use NoWasteBoard.noWasteItems.destroyById() instead.
+        /**
+         * @ngdoc method
+         * @name lbServices.NoWasteBoard#prototype$__destroyById__noWasteItems
+         * @methodOf lbServices.NoWasteBoard
+         *
+         * @description
+         *
+         * Delete a related item by id for noWasteItems.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for noWasteItems
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
         "prototype$__destroyById__noWasteItems": {
           params: {
           'fk': '@fk'
@@ -2374,7 +1629,40 @@ module.factory(
           method: "DELETE"
         },
 
-        // INTERNAL. Use NoWasteBoard.noWasteItems.updateById() instead.
+        /**
+         * @ngdoc method
+         * @name lbServices.NoWasteBoard#prototype$__updateById__noWasteItems
+         * @methodOf lbServices.NoWasteBoard
+         *
+         * @description
+         *
+         * Update a related item by id for noWasteItems.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for noWasteItems
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `NoWasteBoard` object.)
+         * </em>
+         */
         "prototype$__updateById__noWasteItems": {
           params: {
           'fk': '@fk'
@@ -2443,26 +1731,138 @@ module.factory(
           method: "HEAD"
         },
 
-        // INTERNAL. Use NoWasteBoard.noWasteItems() instead.
+        /**
+         * @ngdoc method
+         * @name lbServices.NoWasteBoard#prototype$__get__noWasteItems
+         * @methodOf lbServices.NoWasteBoard
+         *
+         * @description
+         *
+         * Queries noWasteItems of NoWasteBoard.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `filter` – `{object=}` - 
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `NoWasteBoard` object.)
+         * </em>
+         */
         "prototype$__get__noWasteItems": {
           isArray: true,
           url: urlBase + "/NoWasteBoards/:id/noWasteItems",
           method: "GET"
         },
 
-        // INTERNAL. Use NoWasteBoard.noWasteItems.create() instead.
+        /**
+         * @ngdoc method
+         * @name lbServices.NoWasteBoard#prototype$__create__noWasteItems
+         * @methodOf lbServices.NoWasteBoard
+         *
+         * @description
+         *
+         * Creates a new instance in noWasteItems of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `NoWasteBoard` object.)
+         * </em>
+         */
         "prototype$__create__noWasteItems": {
           url: urlBase + "/NoWasteBoards/:id/noWasteItems",
           method: "POST"
         },
 
-        // INTERNAL. Use NoWasteBoard.noWasteItems.destroyAll() instead.
+        /**
+         * @ngdoc method
+         * @name lbServices.NoWasteBoard#prototype$__delete__noWasteItems
+         * @methodOf lbServices.NoWasteBoard
+         *
+         * @description
+         *
+         * Deletes all noWasteItems of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
         "prototype$__delete__noWasteItems": {
           url: urlBase + "/NoWasteBoards/:id/noWasteItems",
           method: "DELETE"
         },
 
-        // INTERNAL. Use NoWasteBoard.noWasteItems.count() instead.
+        /**
+         * @ngdoc method
+         * @name lbServices.NoWasteBoard#prototype$__count__noWasteItems
+         * @methodOf lbServices.NoWasteBoard
+         *
+         * @description
+         *
+         * Counts noWasteItems of NoWasteBoard.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
         "prototype$__count__noWasteItems": {
           url: urlBase + "/NoWasteBoards/:id/noWasteItems/count",
           method: "GET"
@@ -2915,12 +2315,6 @@ module.factory(
           method: "POST"
         },
 
-        // INTERNAL. Use NoWasteItem.noWasteBoard() instead.
-        "::get::NoWasteItem::noWasteBoard": {
-          url: urlBase + "/NoWasteItems/:id/noWasteBoard",
-          method: "GET"
-        },
-
         // INTERNAL. Use Shop.noWasteBoard() instead.
         "::get::Shop::noWasteBoard": {
           url: urlBase + "/Shops/:id/noWasteBoard",
@@ -3185,307 +2579,6 @@ module.factory(
     */
     R.modelName = "NoWasteBoard";
 
-    /**
-     * @ngdoc object
-     * @name lbServices.NoWasteBoard.noWasteItems
-     * @header lbServices.NoWasteBoard.noWasteItems
-     * @object
-     * @description
-     *
-     * The object `NoWasteBoard.noWasteItems` groups methods
-     * manipulating `NoWasteItem` instances related to `NoWasteBoard`.
-     *
-     * Call {@link lbServices.NoWasteBoard#noWasteItems NoWasteBoard.noWasteItems()}
-     * to query all related instances.
-     */
-
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteBoard#noWasteItems
-         * @methodOf lbServices.NoWasteBoard
-         *
-         * @description
-         *
-         * Queries noWasteItems of NoWasteBoard.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `filter` – `{object=}` - 
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        R.noWasteItems = function() {
-          var TargetResource = $injector.get("NoWasteItem");
-          var action = TargetResource["::get::NoWasteBoard::noWasteItems"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteBoard.noWasteItems#count
-         * @methodOf lbServices.NoWasteBoard.noWasteItems
-         *
-         * @description
-         *
-         * Counts noWasteItems of NoWasteBoard.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `count` – `{number=}` - 
-         */
-        R.noWasteItems.count = function() {
-          var TargetResource = $injector.get("NoWasteItem");
-          var action = TargetResource["::count::NoWasteBoard::noWasteItems"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteBoard.noWasteItems#create
-         * @methodOf lbServices.NoWasteBoard.noWasteItems
-         *
-         * @description
-         *
-         * Creates a new instance in noWasteItems of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        R.noWasteItems.create = function() {
-          var TargetResource = $injector.get("NoWasteItem");
-          var action = TargetResource["::create::NoWasteBoard::noWasteItems"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteBoard.noWasteItems#createMany
-         * @methodOf lbServices.NoWasteBoard.noWasteItems
-         *
-         * @description
-         *
-         * Creates a new instance in noWasteItems of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        R.noWasteItems.createMany = function() {
-          var TargetResource = $injector.get("NoWasteItem");
-          var action = TargetResource["::createMany::NoWasteBoard::noWasteItems"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteBoard.noWasteItems#destroyAll
-         * @methodOf lbServices.NoWasteBoard.noWasteItems
-         *
-         * @description
-         *
-         * Deletes all noWasteItems of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        R.noWasteItems.destroyAll = function() {
-          var TargetResource = $injector.get("NoWasteItem");
-          var action = TargetResource["::delete::NoWasteBoard::noWasteItems"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteBoard.noWasteItems#destroyById
-         * @methodOf lbServices.NoWasteBoard.noWasteItems
-         *
-         * @description
-         *
-         * Delete a related item by id for noWasteItems.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `fk` – `{*}` - Foreign key for noWasteItems
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        R.noWasteItems.destroyById = function() {
-          var TargetResource = $injector.get("NoWasteItem");
-          var action = TargetResource["::destroyById::NoWasteBoard::noWasteItems"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteBoard.noWasteItems#findById
-         * @methodOf lbServices.NoWasteBoard.noWasteItems
-         *
-         * @description
-         *
-         * Find a related item by id for noWasteItems.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `fk` – `{*}` - Foreign key for noWasteItems
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        R.noWasteItems.findById = function() {
-          var TargetResource = $injector.get("NoWasteItem");
-          var action = TargetResource["::findById::NoWasteBoard::noWasteItems"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteBoard.noWasteItems#updateById
-         * @methodOf lbServices.NoWasteBoard.noWasteItems
-         *
-         * @description
-         *
-         * Update a related item by id for noWasteItems.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `fk` – `{*}` - Foreign key for noWasteItems
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        R.noWasteItems.updateById = function() {
-          var TargetResource = $injector.get("NoWasteItem");
-          var action = TargetResource["::updateById::NoWasteBoard::noWasteItems"];
-          return action.apply(R, arguments);
-        };
 
         /**
          * @ngdoc method
@@ -3930,699 +3023,6 @@ module.factory(
         R.profiles.updateById = function() {
           var TargetResource = $injector.get("Profile");
           var action = TargetResource["::updateById::NoWasteBoard::profiles"];
-          return action.apply(R, arguments);
-        };
-
-    return R;
-  }]);
-
-/**
- * @ngdoc object
- * @name lbServices.NoWasteItem
- * @header lbServices.NoWasteItem
- * @object
- *
- * @description
- *
- * A $resource object for interacting with the `NoWasteItem` model.
- *
- * ## Example
- *
- * See
- * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
- * for an example of using this object.
- *
- */
-module.factory(
-  "NoWasteItem",
-  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
-    var R = Resource(
-      urlBase + "/NoWasteItems/:id",
-      { 'id': '@id' },
-      {
-
-        // INTERNAL. Use NoWasteItem.noWasteBoard() instead.
-        "prototype$__get__noWasteBoard": {
-          url: urlBase + "/NoWasteItems/:id/noWasteBoard",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#create
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Create a new instance of the model and persist it into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        "create": {
-          url: urlBase + "/NoWasteItems",
-          method: "POST"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#createMany
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Create a new instance of the model and persist it into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        "createMany": {
-          isArray: true,
-          url: urlBase + "/NoWasteItems",
-          method: "POST"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#upsert
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Update an existing model instance or insert a new one into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        "upsert": {
-          url: urlBase + "/NoWasteItems",
-          method: "PUT"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#exists
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Check whether a model instance exists in the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `exists` – `{boolean=}` - 
-         */
-        "exists": {
-          url: urlBase + "/NoWasteItems/:id/exists",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#findById
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Find a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         *  - `filter` – `{object=}` - Filter defining fields and include
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        "findById": {
-          url: urlBase + "/NoWasteItems/:id",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#find
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Find all instances of the model matched by filter from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        "find": {
-          isArray: true,
-          url: urlBase + "/NoWasteItems",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#findOne
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Find first instance of the model matched by filter from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        "findOne": {
-          url: urlBase + "/NoWasteItems/findOne",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#updateAll
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Update instances of the model matched by where from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * The number of instances updated
-         */
-        "updateAll": {
-          url: urlBase + "/NoWasteItems/update",
-          method: "POST"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#deleteById
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Delete a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        "deleteById": {
-          url: urlBase + "/NoWasteItems/:id",
-          method: "DELETE"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#count
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Count instances of the model matched by where from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `count` – `{number=}` - 
-         */
-        "count": {
-          url: urlBase + "/NoWasteItems/count",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#prototype$updateAttributes
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Update attributes for a model instance and persist it into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        "prototype$updateAttributes": {
-          url: urlBase + "/NoWasteItems/:id",
-          method: "PUT"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#createChangeStream
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Create a change stream.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         *  - `options` – `{object=}` - 
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `changes` – `{ReadableStream=}` - 
-         */
-        "createChangeStream": {
-          url: urlBase + "/NoWasteItems/change-stream",
-          method: "POST"
-        },
-
-        // INTERNAL. Use NoWasteBoard.noWasteItems.findById() instead.
-        "::findById::NoWasteBoard::noWasteItems": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/NoWasteBoards/:id/noWasteItems/:fk",
-          method: "GET"
-        },
-
-        // INTERNAL. Use NoWasteBoard.noWasteItems.destroyById() instead.
-        "::destroyById::NoWasteBoard::noWasteItems": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/NoWasteBoards/:id/noWasteItems/:fk",
-          method: "DELETE"
-        },
-
-        // INTERNAL. Use NoWasteBoard.noWasteItems.updateById() instead.
-        "::updateById::NoWasteBoard::noWasteItems": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/NoWasteBoards/:id/noWasteItems/:fk",
-          method: "PUT"
-        },
-
-        // INTERNAL. Use NoWasteBoard.noWasteItems() instead.
-        "::get::NoWasteBoard::noWasteItems": {
-          isArray: true,
-          url: urlBase + "/NoWasteBoards/:id/noWasteItems",
-          method: "GET"
-        },
-
-        // INTERNAL. Use NoWasteBoard.noWasteItems.create() instead.
-        "::create::NoWasteBoard::noWasteItems": {
-          url: urlBase + "/NoWasteBoards/:id/noWasteItems",
-          method: "POST"
-        },
-
-        // INTERNAL. Use NoWasteBoard.noWasteItems.createMany() instead.
-        "::createMany::NoWasteBoard::noWasteItems": {
-          isArray: true,
-          url: urlBase + "/NoWasteBoards/:id/noWasteItems",
-          method: "POST"
-        },
-
-        // INTERNAL. Use NoWasteBoard.noWasteItems.destroyAll() instead.
-        "::delete::NoWasteBoard::noWasteItems": {
-          url: urlBase + "/NoWasteBoards/:id/noWasteItems",
-          method: "DELETE"
-        },
-
-        // INTERNAL. Use NoWasteBoard.noWasteItems.count() instead.
-        "::count::NoWasteBoard::noWasteItems": {
-          url: urlBase + "/NoWasteBoards/:id/noWasteItems/count",
-          method: "GET"
-        },
-      }
-    );
-
-
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#updateOrCreate
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Update an existing model instance or insert a new one into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        R["updateOrCreate"] = R["upsert"];
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#update
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Update instances of the model matched by where from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * The number of instances updated
-         */
-        R["update"] = R["updateAll"];
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#destroyById
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Delete a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        R["destroyById"] = R["deleteById"];
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#removeById
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Delete a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteItem` object.)
-         * </em>
-         */
-        R["removeById"] = R["deleteById"];
-
-
-    /**
-    * @ngdoc property
-    * @name lbServices.NoWasteItem#modelName
-    * @propertyOf lbServices.NoWasteItem
-    * @description
-    * The name of the model represented by this $resource,
-    * i.e. `NoWasteItem`.
-    */
-    R.modelName = "NoWasteItem";
-
-
-        /**
-         * @ngdoc method
-         * @name lbServices.NoWasteItem#noWasteBoard
-         * @methodOf lbServices.NoWasteItem
-         *
-         * @description
-         *
-         * Fetches belongsTo relation noWasteBoard.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `refresh` – `{boolean=}` - 
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `NoWasteBoard` object.)
-         * </em>
-         */
-        R.noWasteBoard = function() {
-          var TargetResource = $injector.get("NoWasteBoard");
-          var action = TargetResource["::get::NoWasteItem::noWasteBoard"];
           return action.apply(R, arguments);
         };
 

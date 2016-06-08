@@ -289,7 +289,31 @@ angular.module('starter.controllers', [])
 
 .controller('DailyBoardCtrl', function($scope,$rootScope,Profile,Shop,DailyBoard) {
 	$scope.dailyItemData = {};
+	$scope.dailyBoard = {};
 
+	Profile.shop({id:$rootScope.currentProfile.id
+	})
+    .$promise.then(
+    function (response) {
+    	$scope.theshop = response;
+    	console.log($scope.theshop.id);
+    	Shop.dailyBoard({id:$scope.theshop.id
+		})  .$promise.then(
+			    function (response) {	
+			    	$scope.dailyBoard = response;		 
+			    	console.log("Load: " + $scope.dailyBoard.id );  	
+			    },
+			    function (response) {
+			    	console.log("Error: " + response.status + " " + response.statusText);
+			    });
+    },
+    function (response) {
+    	console.log("Error: " + response.status + " " + response.statusText);
+    });
+	
+	
+	
+	
 	
 	/*$scope.theProfile = Profile.findById({id: $rootScope.currentProfile.id})
     .$promise.then(
