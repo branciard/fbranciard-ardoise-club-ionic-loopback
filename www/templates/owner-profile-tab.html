@@ -1,20 +1,108 @@
-<ion-view view-title="Profile">
+<ion-view cache-view="false" view-title="Profile">
   <ion-content class="padding">
-    <h2>Welcome owner profile page</h2>
-    <p>
-    This is the owner profile page
-    </p>
+    <div class="list">
     
-        <a  href="#/user-tabs/user-profile-tab" class="button">
-  switch to client mode
-      <i class="ion-arrow-swap icon ion-arrow-swap"></i>
-      </a>
-      
-         <button class="button" ng-click="openAddShopModal()">
-  			create new shop
 
-      </button>
+     <div class="item item-divider">
+    	Profile
+      </div>
+        <div class="item">
+     numbers of clients :
+          <span class="item-note">
+      {{shop.clientsNumber}}
+    </span>
+  </div>
+            <div class="item">
+     number of shop PEPS  :
+          <span class="item-note">
+      {{shop.pepsShop}}
+    </span>
+  </div>
       
     
+       <a class="item item-icon-right" href="#/user-tabs/user-profile-tab">
+    <i class="icon ion-arrow-swap"></i>
+    switch to user mode
+  </a>
+    
+    
+      <div class="item item-divider">
+    	Shop
+      </div>
+    
+          <div ng-show="showCreateShopBtn" class="item item-icon-right"  ng-click="openAddShopModal()">
+    <i class="icon ion-plus-circled"></i>
+    Create a shop
+
+    </div>
+     <div ng-show="!showCreateShopBtn" class="item">
+    Name
+             <span class="item-note">
+      {{shop.name}}
+    </span>
+    </div>
+         <div ng-show="!showCreateShopBtn" class="item">
+    Category
+             <span class="item-note">
+      {{shop.category}}
+    </span>
+    </div>
+             <div ng-show="!showCreateShopBtn" class="item">
+    Telephon
+             <span class="item-note">
+      {{shop.tel}}
+    </span>
+    </div>
+    
+         <div class="item item-divider">
+    	Shop Address
+      </div>
+    
+         <div ng-show="!showCreateShopBtn" class="item">
+    street
+             <span class="item-note">
+      {{shop.street}}
+    </span>
+    </div>
+            <div ng-show="!showCreateShopBtn" class="item">
+    city
+             <span class="item-note">
+      {{shop.city}}
+    </span>
+    </div> 
+    
+                <div ng-show="!showCreateShopBtn" class="item">
+    zipcode
+             <span class="item-note">
+      {{shop.zipcode}}
+    </span>
+    </div> 
+    
+                    <div ng-show="!showCreateShopBtn" class="item">
+    country
+             <span class="item-note">
+      {{shop.country}}
+    </span>
+    </div> 
+    
+    
+    <div ng-show="showModifyShopBtn" class="item item-icon-right" ng-click="openModifyShopModal()">
+    <i class="icon ion-edit"></i>
+    Modify the shop
+
+    </div>
+    
+    <div ng-show="showDeleteShopBtn"  class="item item-icon-right"  ng-click="deleteShopToConfirm()">
+    <i class="icon ion-minus-circled"></i>
+    Delete the shop
+
+     </div>
+      
+ 
+  
+    
+    </div>
+    
+ 
   </ion-content>
 </ion-view>

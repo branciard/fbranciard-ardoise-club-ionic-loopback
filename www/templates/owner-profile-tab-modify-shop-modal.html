@@ -1,43 +1,43 @@
 <ion-modal-view>
   <ion-header-bar>
-    <h1 class="title">Add shop</h1>
+    <h1 class="title">Modify shop</h1>
     <div class="buttons">
-      <button class="button button-clear" ng-click="closeAddShopModal()">Close</button>
+      <button class="button button-positive" ng-click="closeModifyShopModal()">Close</button>
     </div>
   </ion-header-bar>
   <ion-content>
-    <form ng-submit="addShop()">
+    <form ng-submit="modifyShop()">
       <div class="list">
         <label class="item item-input">
           <span class="input-label">Shop name</span>
-          <input type="text" ng-model="shopData.name">
+          <input type="text" ng-model="shop.name">
         </label>
         <label class="item item-input">
           <span class="input-label">Category</span>
-          <input type="text" ng-model="shopData.category">
+          <input type="text" ng-model="shop.category">
         </label>
         <label class="item item-input">
           <span class="input-label">telephon</span>
-          <input type="tel" ng-model="shopData.tel">
+          <input type="tel" ng-model="shop.tel"  >
         </label>
         <label class="item item-input">
           <span class="input-label">Street</span>
-          <input type="text" ng-model="shopData.street">
+          <input type="text" ng-model="shop.street">
         </label>
         <label class="item item-input">
           <span class="input-label">city</span>
-          <input type="text" ng-model="shopData.city">
+          <input type="text" ng-model="shop.city" >
         </label>
         <label class="item item-input">
           <span class="input-label">zipcode</span>
-          <input type="text" ng-model="shopData.zipcode">
+          <input type="text" ng-model="shop.zipcode">
         </label>
         <label class="item item-input">
           <span class="input-label">country</span>
-          <input type="text" ng-model="shopData.country">
+          <input type="text" ng-model="shop.country" >
         </label>
         <label class="item">
-          <button class="button button-block button-positive" type="submit">Add Shop</button>
+          <button class="button button-block button-positive" type="submit">Modify Shop</button>
         </label>
       </div>
     </form>

@@ -1,13 +1,35 @@
 <ion-view view-title="Profile">
   <ion-content class="padding">
-    <h2>Welcome profile page</h2>
-    <p>
-    This is the profile page
-    </p>
+  
+      <div class="list">
+    <div class="item item-divider">
+    	Profile
+      </div>
+      
+
+            <div class="item">
+     Name  :
+          <span class="item-note">
+      {{profile.name}}
+    </span>
+  </div>
+            <div class="item">
+     Number of PEPS :
+          <span class="item-note">
+      {{profile.peps}}
+    </span>
+  </div>
+      
+      
+             <a class="item item-icon-right" href="#/owner-tabs/owner-profile-tab">
+    <i class="icon ion-arrow-swap"></i>
+      Switch to owner mode
+  </a>
     
-    <a  href="#/owner-tabs/owner-profile-tab" class="button">
-  switch to owner shop mode
-      <i class="ion-arrow-swap icon ion-arrow-swap"></i>
-      </a>
+  
+      
+      </div>
   </ion-content>
+  
+
 </ion-view>
