@@ -1,26 +1,46 @@
-<ion-view view-title="Daily Board Board">
+<ion-view view-title="Daily Board">
   <ion-content class="padding">
-    <h2>Welcome owner daily board page</h2>
-    <p>
-    This is the owner daily board page
-    </p>
+ 
          
-       <form ng-submit="addDailyItem()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">item name </span> :
-          <input type="text" ng-model="dailyItemData.name">
-        </label>
-              <label class="item item-input">
-          <span class="input-label">item price </span> :
-          <input type="text" ng-model="dailyItemData.price">
-        </label>
+    
+         
+<div class="card">
+  <div class="item item-divider">
+  
+<div class="row">
+  <div class="col col-25">      <div class="buttons">
+        <button class="button button-icon icon ion-ios-minus-outline"
+          ng-click="toggleDelete()"></button>
+      </div></div>
+  <div class="col col-65">
+  <div class="text-left">
+  	<h2>{{dailyBoard.title}}</h2>
+  </div>
+    
+  </div>
+  <div class="col col-10">      <div class="buttons">
+        <button class="button button-icon icon ion-ios-plus-outline"
+          ng-click="openAddDailyItemModal()" ng-show="shouldShowAdd"></button>
+      </div></div>
+</div>
+    
+  
+  </div>
+        <ion-list show-delete="shouldShowDelete" >
+      <ion-item  ng-repeat="item in dailyBoard.dailyItemList"  class="item-thumbnail-left" on-swipe-left="deleteDailyItem(item.id)">
+    
+        <h2>{{item.name}} 
+        <span style="font-size:75%">{{item.price}} </span>
+       </h2>
+        <ion-delete-button class="ion-minus-circled"
+          ng-click="deleteDailyItem(item.id)">
+        </ion-delete-button>
+      </ion-item>
+    </ion-list>
+</div>
+         
+         
 
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Add item</button>
-        </label>
-      </div>
-    </form>
     
   </ion-content>
 </ion-view>

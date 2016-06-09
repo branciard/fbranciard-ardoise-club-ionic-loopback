@@ -106,33 +106,37 @@ angular.module('starter.controllers', [])
     
     $scope.addShop = function () {
         console.log('addShop', $scope.shopCreateData);   
-        $scope.shop =Profile.shop.create({ id: $rootScope.currentProfile.id },$scope.shopCreateData
-        		, function() {
-        	  console.log('shop created and link to current profile')
-        	  Profile.prototype$updateAttributes({ id: $rootScope.currentProfile.id }, 
-        			  { shopId: $scope.shop.id });
-            //create a default dailyboard
-            $scope.newDailyBoard =Shop.dailyBoard.create(
-          		  { id: $scope.shop.id },
-          		  { title: $scope.shop.name +' DailyBoard !'}, function() {
-          			$scope.shop.dailyBoardId=$scope.newDailyBoard.id;
-          			$scope.shop.$save();
- 		  
-                      console.log('daily board created and link to shop')
-                  });
-            
-            //create a default noWasteBoard
-            $scope.newNoWasteBoard =Shop.noWasteBoard.create(
-          		  { id: $scope.shop.id },
-          		  { title: $scope.shop.name +' NoWasteBoard !'}, function() {
-          			$scope.shop.noWasteBoardId=$scope.newNoWasteBoard.id;
-          			$scope.shop.$save();
- 		  
-                      console.log('no waste board created and link to shop')
-                  });
-
-          }).$promise.then(
+        Profile.shop.create({ id: $rootScope.currentProfile.id },$scope.shopCreateData).$promise.then(
                   function (response) {
+                	  $scope.shop=response;
+                	  
+                   	  console.log('shop created and link to current profile')
+                	  Profile.prototype$updateAttributes({ id: $rootScope.currentProfile.id }, 
+                			  { shopId: $scope.shop.id });
+                    //create a default dailyboard
+                    $scope.newDailyBoard =Shop.dailyBoard.create(
+                  		  { id: $scope.shop.id },
+                  		  { title: $scope.shop.name +' DailyBoard !'}, function() {
+                  			$scope.shop.dailyBoardId=$scope.newDailyBoard.id;
+                  			$scope.shop.$save();
+         		  
+                              console.log('daily board created and link to shop')
+                          });
+                    
+                    //create a default noWasteBoard
+                    $scope.newNoWasteBoard =Shop.noWasteBoard.create(
+                  		  { id: $scope.shop.id },
+                  		  { title: $scope.shop.name +' NoWasteBoard !'}, function() {
+                  			$scope.shop.noWasteBoardId=$scope.newNoWasteBoard.id;
+                  			$scope.shop.$save();
+         		  
+                              console.log('no waste board created and link to shop')
+                          });
+                	  
+                	  
+                	  
+                	  
+                	  
                       $scope.closeAddShopModal();
                       $state.go($state.current, {}, {reload: true});
                  
@@ -287,10 +291,12 @@ angular.module('starter.controllers', [])
 	
 })
 
-.controller('DailyBoardCtrl', function($scope,$rootScope,Profile,Shop,DailyBoard) {
+.controller('DailyBoardCtrl', function($scope,$rootScope,$ionicModal,Profile,Shop,DailyBoard) {
 	$scope.dailyItemData = {};
 	$scope.dailyBoard = {};
-
+	$scope.shouldShowDelete = false;
+	$scope.shouldShowAdd = true;
+	
 	Profile.shop({id:$rootScope.currentProfile.id
 	})
     .$promise.then(
@@ -300,7 +306,8 @@ angular.module('starter.controllers', [])
     	Shop.dailyBoard({id:$scope.theshop.id
 		})  .$promise.then(
 			    function (response) {	
-			    	$scope.dailyBoard = response;		 
+			    	$scope.dailyBoard = response;
+			    	$scope.checkAddItemButton();
 			    	console.log("Load: " + $scope.dailyBoard.id );  	
 			    },
 			    function (response) {
@@ -342,12 +349,65 @@ angular.module('starter.controllers', [])
 
 	
 
-	$scope.addDailyItem = function () {
-		console.log($rootScope.currentProfile.id);
+    $ionicModal.fromTemplateUrl('templates/owner-dailyboard-tab-add-daily-item-modal.html', {
+        scope: $scope
+    }).then(function (modal) {
+        $scope.addDailyItemModal = modal;
+    });
 	
+   
+    $scope.closeAddDailyItemModal = function () {
+        $scope.addDailyItemModal.hide();
+    };
+
+    $scope.openAddDailyItemModal = function () {
+    	$scope.dailyItemData = {};
+        $scope.addDailyItemModal.show();
+    };
+    
+    $scope.toggleDelete = function () {
+        $scope.shouldShowDelete = !$scope.shouldShowDelete;
+        console.log($scope.shouldShowDelete);
+    }
+    
+    $scope.checkAddItemButton=function(){
+		if($scope.dailyBoard.dailyItemList.length >= 5){
+    		$scope.shouldShowAdd=false;
+    	}
+		else
+		{
+			$scope.shouldShowAdd=true;
+		}
+	}
+    
+    $scope.deleteDailyItem = function (dailyItemListId) {
+    	  	
+    	  for (var i = 0; i < $scope.dailyBoard.dailyItemList.length; i++) {
+    		  if ($scope.dailyBoard.dailyItemList[i].id == dailyItemListId ){
+	              console.log('id: ' + $scope.dailyBoard.dailyItemList[i].id);
+	              $scope.dailyBoard.dailyItemList.splice(i, 1);
+	    		  break;
+    		  }
+          }
+    	  $scope.checkAddItemButton();
+    	  $scope.dailyBoard.$save();
+    }
+
+	$scope.addDailyItem = function () {
 		
 		
-		Profile.shop({id:$rootScope.currentProfile.id
+		$scope.dailyBoard.dailyItemList.push({ name:$scope.dailyItemData.name, price:$scope.dailyItemData.price});
+
+	    $scope.checkAddItemButton();
+		$scope.dailyBoard.$save();
+	    		 
+	    	
+	              console.log('dailyItemList added !');
+	            	$scope.closeAddDailyItemModal();
+	     	
+	    	
+
+	/*	Profile.shop({id:$rootScope.currentProfile.id
 		})
 	    .$promise.then(
 	    function (response) {
@@ -357,19 +417,28 @@ angular.module('starter.controllers', [])
 			})  .$promise.then(
 				    function (response) {
 				    	$scope.thedailyBoard = response;
-				    	console.log($scope.thedailyBoard.id);
-				    	
-				    	DailyBoard.dailyItems.create( { id: $scope.thedailyBoard.id },{ name:$scope.dailyItemData.name, price:$scope.dailyItemData.price, itemPosition:'1'});
-				    	console.log('dailyItemList added !');
+				
+				     $scope.thedailyBoard.dailyItemList.push({ name:$scope.dailyItemData.name, price:$scope.dailyItemData.price});
+				     $scope.thedailyBoard.$save();
+				    		 
+				    		 
+				              console.log('dailyItemList added !');
+				            	$scope.closeAddDailyItemModal();
+				     	
+				    		  
 				    	
 				    },
 				    function (response) {
 				    	console.log("Error: " + response.status + " " + response.statusText);
-				    });
+				     	$scope.closeAddDailyItemModal();
+				    });    	
 	    },
 	    function (response) {
 	    	console.log("Error: " + response.status + " " + response.statusText);
+	    	$scope.closeAddDailyItemModal();
 	    });
+	    
+	   */ 
 		
 	}
 	
