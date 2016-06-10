@@ -28,10 +28,15 @@
   </div>
         <ion-list show-delete="shouldShowDelete" >
       <ion-item  ng-repeat="item in dailyBoard.dailyItemList"  class="item-thumbnail-left" on-swipe-left="deleteDailyItem(item.id)">
-    
-        <h2>{{item.name}} 
-        <span style="font-size:75%">{{item.price}} </span>
-       </h2>
+    <div class="row">
+    <div class="col col-50"> 
+        <h2>{{item.name}} </h2>
+         </div>
+
+         <div class="col col-50"> 
+        {{item.price}} <i class="icon ion-social-usd"></i>
+       
+       </div>
         <ion-delete-button class="ion-minus-circled"
           ng-click="deleteDailyItem(item.id)">
         </ion-delete-button>
