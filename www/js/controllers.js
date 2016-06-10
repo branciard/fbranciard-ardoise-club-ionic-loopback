@@ -403,6 +403,7 @@ angular.module('starter.controllers', [])
 	    		 
 	    	
 	              console.log('dailyItemList added !');
+	               $scope.shouldShowDelete = false;
 	            	$scope.closeAddDailyItemModal();
 	     	
 	    	
