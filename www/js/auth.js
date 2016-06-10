@@ -1,114 +1,112 @@
 'use strict';
 
 angular
-  .module('starter.services',[])
-  .constant("baseURL", "http://fbranciard-coursera-loopback-api.mybluemix.net/")
-  .factory('AuthService', ['Profile', '$q', '$rootScope', '$ionicPopup', 
-    function(Profile, $q, $rootScope, $ionicPopup) {
-    function login(loginData) {
-      return Profile
-        .login(loginData)
-        .$promise
-        .then(function(response) {
-          $rootScope.currentProfile = {
-            id: response.user.id,
-            tokenId: response.id,
-            username: loginData.username
-          };
-          $rootScope.$broadcast('login:Successful');
-        },
-        function(response){
+	.module('starter.services', [])
+	.constant("baseURL", "http://fbranciard-coursera-loopback-api.mybluemix.net/")
+	.factory('AuthService', ['Profile', '$q', '$rootScope', '$ionicPopup',
+    function (Profile, $q, $rootScope, $ionicPopup) {
+			function login(loginData) {
+				return Profile
+					.login(loginData)
+					.$promise
+					.then(function (response) {
+							$rootScope.currentProfile = {
+								id: response.user.id,
+								tokenId: response.id,
+								username: loginData.username
+							};
+							$rootScope.$broadcast('login:Successful');
+						},
+						function (response) {
 
-              var message = '<div><p>' +  response.data.error.message + 
-                  '</p><p>' + response.data.error.name + '</p></div>';
-            
-               var alertPopup = $ionicPopup.alert({
-                    title: '<h4>Login Failed!</h4>',
-                    template: message
-                });
+							var message = '<div><p>' + response.data.error.message +
+								'</p><p>' + response.data.error.name + '</p></div>';
 
-                alertPopup.then(function(res) {
-                    console.log('Login Failed!');
-                });
-        });
-    }
-      
-    function isAuthenticated() {
-        if ($rootScope.currentProfile) {
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-      
-    function getUsername() {
-        return $rootScope.currentProfile.username;
-    }
+							var alertPopup = $ionicPopup.alert({
+								title: '<h4>Login Failed!</h4>',
+								template: message
+							});
 
-    function logout() {
-      return Profile
-       .logout()
-       .$promise
-       .then(function() {
-         $rootScope.currentProfile = null;
-       });
-    }
+							alertPopup.then(function (res) {
+								console.log('Login Failed!');
+							});
+						});
+			}
 
-    function register(registerData) {
-      return Profile
-        .create({
-         username: registerData.username,
-         email: registerData.email,
-         password: registerData.password
-       })
-       .$promise
-      .then (function(response) {
-          
-        },
-        function(response){
-            
-              var message = '<div><p>' +  response.data.err.message + 
-                  '</p><p>' + response.data.err.name + '</p></div>';
-            
-               var alertPopup = $ionicPopup.alert({
-                    title: '<h4>Registration Failed!</h4>',
-                    template: message
-                });
+			function isAuthenticated() {
+				if ($rootScope.currentProfile) {
+					return true;
+				} else {
+					return false;
+				}
+			}
 
-                alertPopup.then(function(res) {
-                    console.log('Registration Failed!');
-                });
+			function getUsername() {
+				return $rootScope.currentProfile.username;
+			}
 
-        });
-    }
+			function logout() {
+				return Profile
+					.logout()
+					.$promise
+					.then(function () {
+						$rootScope.currentProfile = null;
+					});
+			}
 
-    return {
-      login: login,
-      logout: logout,
-      register: register,
-      isAuthenticated: isAuthenticated,
-      getUsername: getUsername
-    };
+			function register(registerData) {
+				return Profile
+					.create({
+						username: registerData.username,
+						email: registerData.email,
+						password: registerData.password
+					})
+					.$promise
+					.then(function (response) {
+
+						},
+						function (response) {
+
+							var message = '<div><p>' + response.data.err.message +
+								'</p><p>' + response.data.err.name + '</p></div>';
+
+							var alertPopup = $ionicPopup.alert({
+								title: '<h4>Registration Failed!</h4>',
+								template: message
+							});
+
+							alertPopup.then(function (res) {
+								console.log('Registration Failed!');
+							});
+
+						});
+			}
+
+			return {
+				login: login,
+				logout: logout,
+				register: register,
+				isAuthenticated: isAuthenticated,
+				getUsername: getUsername
+			};
   }])
 
 .factory('$localStorage', ['$window', function ($window) {
-    return {
-        store: function (key, value) {
-            $window.localStorage[key] = value;
-        },
-        get: function (key, defaultValue) {
-            return $window.localStorage[key] || defaultValue;
-        },
-        remove: function (key) {
-            $window.localStorage.removeItem(key);
-        },
-        storeObject: function (key, value) {
-            $window.localStorage[key] = JSON.stringify(value);
-        },
-        getObject: function (key, defaultValue) {
-            return JSON.parse($window.localStorage[key] || defaultValue);
-        }
-    }
-}])
-;
+	return {
+		store: function (key, value) {
+			$window.localStorage[key] = value;
+		},
+		get: function (key, defaultValue) {
+			return $window.localStorage[key] || defaultValue;
+		},
+		remove: function (key) {
+			$window.localStorage.removeItem(key);
+		},
+		storeObject: function (key, value) {
+			$window.localStorage[key] = JSON.stringify(value);
+		},
+		getObject: function (key, defaultValue) {
+			return JSON.parse($window.localStorage[key] || defaultValue);
+		}
+	}
+}]);
