@@ -1,0 +1,25 @@
+<ion-modal-view style="width: 90%; height: 90%; top: 5%; left: 5%; right: 5%; bottom: 5%;">
+	<ion-header-bar>
+		<h1 class="title">Add No Waste Item</h1>
+		<div class="buttons">
+			<button class="button button-positive" ng-click="closeAddNoWasteItemModal()">Close</button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<form ng-submit="addNoWasteItem()">
+			<div class="list">
+				<label class="item item-input">
+					<span class="input-label">No Waste item name</span>
+					<input type="text" ng-model="noWasteItemData.name">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">number of item available</span>
+					<input type="text" ng-model="noWasteItemData.itemRemainingNumber">
+				</label>
+				<label class="item">
+					<button class="button button-block button-positive" type="submit">Add No Waste Item</button>
+				</label>
+			</div>
+		</form>
+	</ion-content>
+</ion-modal-view>

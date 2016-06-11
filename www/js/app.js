@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 	});
 
 
-	$rootScope.$on('loading:show', function () {
+	$rootScope.$on('loading:show', function () {		
 		$ionicLoading.show({
 			template: '<ion-spinner></ion-spinner> Loading ...'
 		})
@@ -111,7 +111,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 			url: '/user-profile-tab',
 			views: {
 				'user-profile-tab': {
-					templateUrl: 'templates/user-profile-tab.html'
+					templateUrl: 'templates/user-profile-tab.html',
+					controller: 'UserProfileCtrl'				
 				}
 			}
 		})
@@ -162,7 +163,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 			url: '/owner-nowasteboard-tab',
 			views: {
 				'owner-nowasteboard-tab': {
-					templateUrl: 'templates/owner-nowasteboard-tab.html'
+					templateUrl: 'templates/owner-nowasteboard-tab.html',
+					controller: 'NoWasteBoardCtrl'
 				}
 			}
 		})

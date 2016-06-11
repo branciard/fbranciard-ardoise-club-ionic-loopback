@@ -1,8 +1,46 @@
 <ion-view view-title="No Waste Board">
   <ion-content class="padding">
-    <h2>Welcome owner no waste board page</h2>
-    <p>
-    This is the owner No waste Board page
-    </p>>
+
+
+<div class="card">
+			<div class="item item-divider">
+
+				<div class="row">
+					<div class="col col-25">
+						<div class="buttons">
+							<button class="button button-icon icon ion-ios-minus-outline" ng-click="toggleDelete()"></button>
+						</div>
+					</div>
+					<div class="col col-65">
+						<div class="text-left">
+							<h2>{{noWasteBoard.title}}</h2>
+						</div>
+
+					</div>
+					<div class="col col-10">
+						<div class="buttons">
+							<button class="button button-icon icon ion-ios-plus-outline" ng-click="openAddNoWasteItemModal()" ng-show="shouldShowAdd"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<ion-list show-delete="shouldShowDelete">
+				<ion-item ng-repeat="item in noWasteBoard.noWasteItemList" class="item-thumbnail-left">
+					<div class="row">
+						<div class="col col-50">
+							<h2>{{item.name}} </h2>
+						</div>
+
+						<div class="col col-50">
+							{{item.itemRemainingNumber}} remaining
+
+						</div>
+					</div>
+					<ion-delete-button class="ion-minus-circled" ng-click="deleteNoWasteItem(item.id)">
+					</ion-delete-button>
+				</ion-item>
+			</ion-list>
+		</div>
+
   </ion-content>
 </ion-view>

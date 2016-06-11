@@ -13,7 +13,8 @@ angular
 							$rootScope.currentProfile = {
 								id: response.user.id,
 								tokenId: response.id,
-								username: loginData.username
+								username: loginData.username,
+								peps:response.user.peps
 							};
 							$rootScope.$broadcast('login:Successful');
 						},

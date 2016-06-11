@@ -4,25 +4,22 @@ angular.module('starter.controllers', [])
 .controller('loginCtrl', function ($scope, $rootScope, $state, $localStorage, AuthService) {
 	// Form data for the login modal
 
-
 	$scope.loginData = $localStorage.getObject('userinfo', '{}');
 	$scope.registration = {};
 	$scope.loggedIn = false;
-
-
-
+	
 	if (AuthService.isAuthenticated()) {
 		$scope.loggedIn = true;
 		$scope.username = AuthService.getUsername();
 	}
 
-
 	// Perform the login action when the user submits the login form
 	$scope.doLogin = function () {
+		  $rootScope.$broadcast('loading:show');
 		console.log('Doing login', $scope.loginData);
 		$localStorage.storeObject('userinfo', $scope.loginData);
-
 		AuthService.login($scope.loginData);
+		$rootScope.$broadcast('loading:hide');
 	};
 
 	$scope.logOut = function () {
@@ -39,15 +36,15 @@ angular.module('starter.controllers', [])
 		$state.go('user-tabs.user-dailyboards-tab');
 	});
 
-
 	// Perform the login action when the user submits the login form
 	$scope.doRegister = function () {
+		 $rootScope.$broadcast('loading:show');
 		console.log('Doing registration', $scope.registration);
 		$scope.loginData.username = $scope.registration.username;
 		$scope.loginData.password = $scope.registration.password;
 
 		AuthService.register($scope.registration);
-
+		$rootScope.$broadcast('loading:hide');
 	};
 
 	$rootScope.$on('registration:Successful', function () {
@@ -55,13 +52,11 @@ angular.module('starter.controllers', [])
 		$state.go('user-tabs.user-dailyboards-tab');
 	});
 
-
-
-
 })
 
-.controller('OwnerProfileCtrl', function ($scope, $rootScope, $state, $ionicModal, $ionicPopup, Profile, Shop, DailyBoard, DailyBoardSubscription, NoWasteBoard, NoWasteBoardSubscription) {
+.controller('OwnerProfileCtrl', function ($scope, $rootScope, $state, $ionicModal, $ionicLoading,$ionicPopup, Profile, Shop, DailyBoard, DailyBoardSubscription, NoWasteBoard, NoWasteBoardSubscription) {
 
+	    $rootScope.$broadcast('loading:show');
 		$scope.shopCreateData = {};
 		$scope.shop = {};
 		$scope.showDeleteShopBtn = false;
@@ -80,13 +75,14 @@ angular.module('starter.controllers', [])
 					$scope.showCreateShopBtn = false;
 					$scope.showModifyShopBtn = true;
 					$scope.showDeleteShopBtn = true;
-
+					$rootScope.$broadcast('loading:hide');
 				},
 				function (response) {
 					console.log("Error: " + response.status + " " + response.statusText);
 					$scope.showCreateShopBtn = true;
 					$scope.showModifyShopBtn = false;
 					$scope.showDeleteShopBtn = false;
+					$rootScope.$broadcast('loading:hide');
 				}
 			);
 
@@ -108,6 +104,7 @@ angular.module('starter.controllers', [])
 
 		$scope.addShop = function () {
 			console.log('addShop', $scope.shopCreateData);
+		    $rootScope.$broadcast('loading:show');
 			Profile.shop.create({
 				id: $rootScope.currentProfile.id
 			}, $scope.shopCreateData).$promise.then(
@@ -145,15 +142,15 @@ angular.module('starter.controllers', [])
 					});
 
 
-
-
-
+					$rootScope.$broadcast('loading:hide');
 					$scope.closeAddShopModal();
 					$state.go($state.current, {}, {
 						reload: true
 					});
 
-				});
+				}
+					
+			);
 
 
 		};
@@ -176,7 +173,9 @@ angular.module('starter.controllers', [])
 
 		$scope.modifyShop = function () {
 			console.log('modifyShop', $scope.shop);
+		    $rootScope.$broadcast('loading:show');
 			$scope.shop.$save();
+			$rootScope.$broadcast('loading:hide');
 			$scope.closeModifyShopModal();
 
 		};
@@ -194,7 +193,7 @@ angular.module('starter.controllers', [])
 			confirmPopup.then(function (res) {
 				if (res) {
 					console.log('Ok to delete');
-
+				    $rootScope.$broadcast('loading:show');
 
 					Profile.shop({
 							id: $rootScope.currentProfile.id
@@ -287,6 +286,7 @@ angular.module('starter.controllers', [])
 								$scope.showCreateShopBtn = true;
 								$scope.showModifyShopBtn = false;
 								$scope.showDeleteShopBtn = false;
+								$rootScope.$broadcast('loading:hide');
 
 							},
 							function (response) {
@@ -294,7 +294,7 @@ angular.module('starter.controllers', [])
 								$scope.showModifyShopBtn = false;
 								$scope.showDeleteShopBtn = false;
 								console.log("Error: " + response.status + " " + response.statusText);
-								$scope.closeModifyShopModal();
+								$rootScope.$broadcast('loading:hide');
 							}
 						);
 
@@ -310,11 +310,14 @@ angular.module('starter.controllers', [])
 	})
 	.controller('DailyBoardsCtrl', function ($scope, $rootScope, DailyBoardSubscription) {
 		$scope.subscriptionData = {};
+		 
 		$scope.doSubscribe = function () {
+			  $rootScope.$broadcast('loading:show');
 			DailyBoardSubscription.create({
 				profileId: $rootScope.currentProfile.id,
 				dailyBoardId: $scope.subscriptionData.dailyBoardId
 			});
+			$rootScope.$broadcast('loading:hide');
 			console.log('DailyBoardSubscription created !');
 		}
 
@@ -325,7 +328,7 @@ angular.module('starter.controllers', [])
 		$scope.dailyBoard = {};
 		$scope.shouldShowDelete = false;
 		$scope.shouldShowAdd = true;
-
+		  $rootScope.$broadcast('loading:show');
 		Profile.shop({
 				id: $rootScope.currentProfile.id
 			})
@@ -339,46 +342,18 @@ angular.module('starter.controllers', [])
 						function (response) {
 							$scope.dailyBoard = response;
 							$scope.checkAddItemButton();
-							console.log("Load: " + $scope.dailyBoard.id);
+							$rootScope.$broadcast('loading:hide');
+							console.log("Load dailyBoard id: " + $scope.dailyBoard.id);
 						},
 						function (response) {
+							$rootScope.$broadcast('loading:hide');
 							console.log("Error: " + response.status + " " + response.statusText);
 						});
 				},
 				function (response) {
+					$rootScope.$broadcast('loading:hide');
 					console.log("Error: " + response.status + " " + response.statusText);
 				});
-
-
-
-
-
-		/*$scope.theProfile = Profile.findById({id: $rootScope.currentProfile.id})
-    .$promise.then(
-        function (response) {
-        	$scope.theProfile = response;
-        	console.log($scope.theProfile.id);
-        },
-        function (response) {
-        	console.log("Error: " + response.status + " " + response.statusText);
-        }
-    ); 
-	
-	Profile.shop({id:$rootScope.currentProfile.id, "filter":
-    {}
-	})
-    .$promise.then(
-    function (response) {
-    	$scope.theshop = response;
-    	console.log($scope.theshop.id);
-    },
-    function (response) {
-    	console.log("Error: " + response.status + " " + response.statusText);
-    });
-	*/
-
-
-
 
 		$ionicModal.fromTemplateUrl('templates/owner-dailyboard-tab-add-daily-item-modal.html', {
 			scope: $scope
@@ -410,7 +385,7 @@ angular.module('starter.controllers', [])
 		}
 
 		$scope.deleteDailyItem = function (dailyItemListId) {
-
+			  $rootScope.$broadcast('loading:show');
 			for (var i = 0; i < $scope.dailyBoard.dailyItemList.length; i++) {
 				if ($scope.dailyBoard.dailyItemList[i].id == dailyItemListId) {
 					console.log('id: ' + $scope.dailyBoard.dailyItemList[i].id);
@@ -420,11 +395,12 @@ angular.module('starter.controllers', [])
 			}
 			$scope.checkAddItemButton();
 			$scope.dailyBoard.$save();
+			$rootScope.$broadcast('loading:hide');
 		}
 
 		$scope.addDailyItem = function () {
 
-
+			$rootScope.$broadcast('loading:show');
 			$scope.dailyBoard.dailyItemList.push({
 				name: $scope.dailyItemData.name,
 				price: $scope.dailyItemData.price
@@ -432,50 +408,118 @@ angular.module('starter.controllers', [])
 
 			$scope.checkAddItemButton();
 			$scope.dailyBoard.$save();
-
-
 			console.log('dailyItemList added !');
 			$scope.shouldShowDelete = false;
+			$rootScope.$broadcast('loading:hide');
 			$scope.closeAddDailyItemModal();
-
-
-
-			/*	Profile.shop({id:$rootScope.currentProfile.id
-				})
-			    .$promise.then(
-			    function (response) {
-			    	$scope.theshop = response;
-			    	console.log($scope.theshop.id);
-			    	Shop.dailyBoard({id:$scope.theshop.id
-					})  .$promise.then(
-						    function (response) {
-						    	$scope.thedailyBoard = response;
-						
-						     $scope.thedailyBoard.dailyItemList.push({ name:$scope.dailyItemData.name, price:$scope.dailyItemData.price});
-						     $scope.thedailyBoard.$save();
-						    		 
-						    		 
-						              console.log('dailyItemList added !');
-						            	$scope.closeAddDailyItemModal();
-						     	
-						    		  
-						    	
-						    },
-						    function (response) {
-						    	console.log("Error: " + response.status + " " + response.statusText);
-						     	$scope.closeAddDailyItemModal();
-						    });    	
-			    },
-			    function (response) {
-			    	console.log("Error: " + response.status + " " + response.statusText);
-			    	$scope.closeAddDailyItemModal();
-			    });
-			    
-			   */
 
 		}
 
 	})
+	.controller('NoWasteBoardCtrl', function ($scope, $rootScope, $ionicModal, Profile, Shop, NoWasteBoard) {
+		$scope.noWasteItemData = {};
+		$scope.noWasteBoard = {};
+		$scope.shouldShowDelete = false;
+		$scope.shouldShowAdd = true;
+		$rootScope.$broadcast('loading:show');
+		Profile.shop({
+				id: $rootScope.currentProfile.id
+			})
+			.$promise.then(
+				function (response) {
+					$scope.theshop = response;
+					console.log($scope.theshop.id);
+					Shop.noWasteBoard({
+						id: $scope.theshop.id
+					}).$promise.then(
+						function (response) {
+							$scope.noWasteBoard = response;
+							$scope.checkAddItemButton();
+							console.log("Load noWasteBoard id: " + $scope.noWasteBoard.id);
+							$rootScope.$broadcast('loading:hide');
+						},
+						function (response) {
+							console.log("Error: " + response.status + " " + response.statusText);
+							$rootScope.$broadcast('loading:hide');
+						});
+				},
+				function (response) {
+					console.log("Error: " + response.status + " " + response.statusText);
+					$rootScope.$broadcast('loading:hide');
+				});
+
+
+		$ionicModal.fromTemplateUrl('templates/owner-nowasteboard-tab-add-nowaste-item-modal.html', {
+			scope: $scope
+		}).then(function (modal) {
+			$scope.addNoWasteItemModal = modal;
+		});
+
+
+		$scope.closeAddNoWasteItemModal = function () {
+			$scope.addNoWasteItemModal.hide();
+		};
+
+		$scope.openAddNoWasteItemModal = function () {
+			$scope.noWasteItemData = {};
+			$scope.addNoWasteItemModal.show();
+		};
+
+		$scope.toggleDelete = function () {
+			$scope.shouldShowDelete = !$scope.shouldShowDelete;
+			console.log($scope.shouldShowDelete);
+		}
+
+		$scope.checkAddItemButton = function () {
+			if ($scope.noWasteBoard.noWasteItemList.length >= 5) {
+				$scope.shouldShowAdd = false;
+			} else {
+				$scope.shouldShowAdd = true;
+			}
+		}
+
+		$scope.deleteNoWasteItem = function (noWasteItemListId) {
+			$rootScope.$broadcast('loading:show');
+			for (var i = 0; i < $scope.noWasteBoard.noWasteItemList.length; i++) {
+				if ($scope.noWasteBoard.noWasteItemList[i].id == noWasteItemListId) {
+					console.log('id: ' + $scope.noWasteBoard.noWasteItemList[i].id);
+					$scope.noWasteBoard.noWasteItemList.splice(i, 1);
+					break;
+				}
+			}
+			$scope.checkAddItemButton();
+			$scope.noWasteBoard.$save();
+			$rootScope.$broadcast('loading:hide');
+		}
+
+		$scope.addNoWasteItem = function () {
+
+			$rootScope.$broadcast('loading:show');
+			$scope.noWasteBoard.noWasteItemList.push({
+				name: $scope.noWasteItemData.name,
+				itemRemainingNumber: $scope.noWasteItemData.itemRemainingNumber
+			});
+
+			$scope.checkAddItemButton();
+			$scope.noWasteBoard.$save();
+			console.log('noWasteItemList added !');
+			$scope.shouldShowDelete = false;
+			$rootScope.$broadcast('loading:hide');
+			$scope.closeAddNoWasteItemModal();
+
+		}
+
+	})
+	.controller('UserProfileCtrl', function ($scope,$rootScope,Profile) {
+		console.log('username '+$rootScope.currentProfile.username+' has '+$rootScope.currentProfile.peps+' peps');
+
+		$scope.username=$rootScope.currentProfile.username;
+		$scope.peps=$rootScope.currentProfile.peps;
+
+		
+		
+	})
+
 	.controller('DashCtrl', function ($scope) {})
 
 .controller('ChatsCtrl', function ($scope, Chats) {
