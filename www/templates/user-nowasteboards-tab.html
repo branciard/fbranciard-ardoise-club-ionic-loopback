@@ -1,8 +1,27 @@
-<ion-view view-title="No Waste Boards">
+<ion-view cache-view="false" view-title="No Waste Boards">
 	<ion-content class="padding">
-		<h2>Welcome no waste boards page</h2>
-		<p>
-			This is the no waste boards page
-		</p>
+		  <h4 class="text-center">Subscribed No Waste Boards</h4>
+<div class="list">
+<div class="card text-center" ng-repeat="noWasteBoard in noWasteBoards">
+			<div class="item item-divider">
+				<h2>{{noWasteBoard.title}}</h2> 
+			</div>	
+			<ion-list>
+				<ion-item ng-repeat="item in noWasteBoard.noWasteItemList" class="item-thumbnail-left">
+					<div class="row">
+						<div class="col col-50">
+							<h2>{{item.name}} </h2> 
+						</div>
+						<div class="col col-50">
+							{{item.itemRemainingNumber}} remaining
+						</div>
+					</div>
+				</ion-item>
+			</ion-list>
+				<div class="item item-divider">
+	  				<a type="button" class="button button-small button-positive" href="#/user-tabs/user-nowasteboards-tab/{{noWasteBoard.shopId}}"><i class="icon ion-log-in"></i> Enter </a>
+			</div>
+		</div>
+</div>
 	</ion-content>
 </ion-view>

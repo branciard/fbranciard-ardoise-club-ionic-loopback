@@ -308,20 +308,7 @@ angular.module('starter.controllers', [])
 
 
 	})
-	.controller('DailyBoardsCtrl', function ($scope, $rootScope, DailyBoardSubscription) {
-		$scope.subscriptionData = {};
-		 
-		$scope.doSubscribe = function () {
-			  $rootScope.$broadcast('loading:show');
-			DailyBoardSubscription.create({
-				profileId: $rootScope.currentProfile.id,
-				dailyBoardId: $scope.subscriptionData.dailyBoardId
-			});
-			$rootScope.$broadcast('loading:hide');
-			console.log('DailyBoardSubscription created !');
-		}
 
-	})
 
 .controller('DailyBoardCtrl', function ($scope, $rootScope, $ionicModal, Profile, Shop, DailyBoard) {
 		$scope.dailyItemData = {};
@@ -519,7 +506,204 @@ angular.module('starter.controllers', [])
 		
 		
 	})
+	.controller('SearchCtrl', function ($scope,$rootScope,$state,Shop) {
+		
+		$scope.resultShopList = {};
+		$rootScope.$broadcast('loading:show');
+		$scope.resultShopList=Shop.find({
+			  filter: { limit: 20 }
+			});
+		$rootScope.$broadcast('loading:hide');
 
+
+		
+		
+		
+	})
+	
+	.controller('DailyBoardsCtrl', function ($scope, $rootScope, Profile) {
+		$scope.dailyBoards = {};
+
+		$rootScope.$broadcast('loading:show');
+		Profile.dailyBoards({
+			id: $rootScope.currentProfile.id
+		})
+		.$promise.then(
+			function (response) {
+				$scope.dailyBoards = response;
+				$rootScope.$broadcast('loading:hide');
+				console.log("dailyBoards found : " + response);
+			}
+			);
+	})
+	.controller('NoWasteBoardsCtrl', function ($scope, $rootScope, Profile) {
+		$scope.noWasteBoards = {};
+
+		$rootScope.$broadcast('loading:show');
+		Profile.noWasteBoards({
+			id: $rootScope.currentProfile.id
+		})
+		.$promise.then(
+			function (response) {
+				$scope.noWasteBoards = response;
+				$rootScope.$broadcast('loading:hide');
+				console.log("noWasteBoards found : " + response);
+			}
+			);
+	})
+	
+   .controller('ShopDetailCtrl', function ($scope,$rootScope, $stateParams,Shop,DailyBoardSubscription,NoWasteBoardSubscription) {
+	     
+		$scope.dailyBoard = {};
+		$scope.dailyBoardSubscription = {};
+		$scope.hasSubscribedToDailyBoard=false;
+		$scope.noWasteBoard = {};
+		$scope.noWasteBoardSubscription = {};
+		$scope.hasSubscribedToNoWasteBoard=false;
+		$scope.shop= {};
+
+		$rootScope.$broadcast('loading:show');
+		$scope.shop=Shop.findById({ id: $stateParams.shopId });
+
+		Shop.dailyBoard({
+			id: $stateParams.shopId
+		}).$promise.then(
+			function (response) {
+				$scope.dailyBoard = response;
+			
+				console.log("Load dailyBoard id: " + $scope.dailyBoard.id);
+			
+				DailyBoardSubscription.findOne({
+	                filter: {where: {profileId: $rootScope.currentProfile.id},where: {dailyBoardId: $scope.dailyBoard.id}}
+	            }).$promise.then(
+	            		function (response) {
+							$scope.dailyBoardSubscription=response;
+							console.log('dailyBoardSubscription found, id :'+$scope.dailyBoardSubscription.id);
+							$scope.hasSubscribedToDailyBoard=true;
+						},
+						function (response) {
+							$scope.hasSubscribedToDailyBoard=false;
+							console.log("Error: " + response.status + " " + response.statusText);
+						});
+			},
+			function (response) {
+				console.log("Error: " + response.status + " " + response.statusText);
+			});
+	   	
+
+		Shop.noWasteBoard({
+			id: $stateParams.shopId
+		}).$promise.then(
+			function (response) {
+				$scope.noWasteBoard = response;
+				console.log("Load noWasteBoard id: " + $scope.noWasteBoard.id);
+				
+				NoWasteBoardSubscription.findOne({
+	                filter: {where: {profileId: $rootScope.currentProfile.id},where: {noWasteBoardId: $scope.noWasteBoard.id}}
+	            }).$promise.then(
+	            		function (response) {
+							$scope.noWasteBoardSubscription=response;
+							console.log('noWasteBoardSubscription found, id :'+$scope.noWasteBoardSubscription.id);
+							$scope.hasSubscribedToNoWasteBoard=true;
+							$rootScope.$broadcast('loading:hide');
+						},
+						function (response) {
+							$scope.hasSubscribedToNoWasteBoard=false;
+							console.log("Error: " + response.status + " " + response.statusText);
+							$rootScope.$broadcast('loading:hide');
+						});
+			},
+			function (response) {
+				console.log("Error: " + response.status + " " + response.statusText);
+			});
+		
+		$scope.subscribeToDailyBoard = function (currentDailyBoardId) {
+
+			$rootScope.$broadcast('loading:show');
+			DailyBoardSubscription.create({
+				profileId: $rootScope.currentProfile.id,
+				dailyBoardId: currentDailyBoardId
+			})	.$promise
+			.then(function () {
+				console.log('NoWasteBoardSubscription created !');
+				$scope.hasSubscribedToDailyBoard=true;
+				$rootScope.$broadcast('loading:hide');	
+			}
+			,
+			function (response) {
+				console.log("Error: " + response.status + " " + response.statusText);
+				$rootScope.$broadcast('loading:hide');
+			}
+			);
+			
+		}
+		$scope.unSubscribeToDailyBoard = function (currentDailyBoardSubscriptionId) {
+			console.log('unSubscribeToDailyboard call for id !'+currentDailyBoardSubscriptionId);	
+			$rootScope.$broadcast('loading:show');
+			DailyBoardSubscription.deleteById({
+				id: currentDailyBoardSubscriptionId
+			})
+			.$promise
+			.then(function () {
+				console.log(' DailyBoardSubscription ' + currentDailyBoardSubscriptionId + ' deleted');
+				$scope.hasSubscribedToDailyBoard=false;
+				$rootScope.$broadcast('loading:hide');	
+			}
+			,
+			function (response) {
+				console.log("Error: " + response.status + " " + response.statusText);
+				$rootScope.$broadcast('loading:hide');
+			}
+			);
+		}
+		
+		
+		
+
+		$scope.subscribeToNoWasteBoard = function (currentNoWasteBoardId) {
+
+			$rootScope.$broadcast('loading:show');
+			NoWasteBoardSubscription.create({
+				profileId: $rootScope.currentProfile.id,
+				noWasteBoardId: currentNoWasteBoardId
+			})	.$promise
+			.then(function () {
+				console.log('NoWasteBoardSubscription created !');
+				$scope.hasSubscribedToNoWasteBoard=true;
+				$rootScope.$broadcast('loading:hide');	
+			}
+			,
+			function (response) {
+				console.log("Error: " + response.status + " " + response.statusText);
+				$rootScope.$broadcast('loading:hide');
+			}
+			);
+			
+		}
+		$scope.unSubscribeToNoWasteBoard = function (currentNoWasteBoardSubscriptionId) {
+			console.log('unSubscribeToNoWasteBoard call for id !'+currentNoWasteBoardSubscriptionId);	
+			$rootScope.$broadcast('loading:show');
+			NoWasteBoardSubscription.deleteById({
+				id: currentNoWasteBoardSubscriptionId
+			})
+			.$promise
+			.then(function () {
+				console.log(' NoWasteBoardSubscription ' + currentNoWasteBoardSubscriptionId + ' deleted');
+				$scope.hasSubscribedToNoWasteBoard=false;
+				$rootScope.$broadcast('loading:hide');	
+			}
+			,
+			function (response) {
+				console.log("Error: " + response.status + " " + response.statusText);
+				$rootScope.$broadcast('loading:hide');
+			}
+			);
+		}
+		
+		
+
+   })
+	
 	.controller('DashCtrl', function ($scope) {})
 
 .controller('ChatsCtrl', function ($scope, Chats) {

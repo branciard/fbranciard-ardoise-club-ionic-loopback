@@ -120,7 +120,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 			url: '/user-search-tab',
 			views: {
 				'user-search-tab': {
-					templateUrl: 'templates/user-search-tab.html'
+					templateUrl: 'templates/user-search-tab.html',
+					controller: 'SearchCtrl'
+				}
+			}
+		})
+	    .state('user-tabs.user-shopdetails-from-search-tab', {
+			url: '/user-search-tab/:shopId',
+			views: {
+				'user-search-tab': {
+					templateUrl: 'templates/user-shopdetails.html',
+					controller: 'ShopDetailCtrl'		
 				}
 			}
 		})
@@ -128,7 +138,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 			url: '/user-nowasteboards-tab',
 			views: {
 				'user-nowasteboards-tab': {
-					templateUrl: 'templates/user-nowasteboards-tab.html'
+					templateUrl: 'templates/user-nowasteboards-tab.html',
+					controller: 'NoWasteBoardsCtrl'
+				}
+			}
+		})
+		.state('user-tabs.user-shopdetails-from-nowasteboards-tab', {
+			url: '/user-nowasteboards-tab/:shopId',
+			views: {
+				'user-nowasteboards-tab': {
+					templateUrl: 'templates/user-shopdetails.html',
+					controller: 'ShopDetailCtrl'		
 				}
 			}
 		})
@@ -141,6 +161,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 				}
 			}
 		})
+	    .state('user-tabs.user-shopdetails-from-dailyboards-tab', {
+			url: '/user-dailyboards-tab/:shopId',
+			views: {
+				'user-dailyboards-tab': {
+					templateUrl: 'templates/user-shopdetails.html',
+					controller: 'ShopDetailCtrl'		
+				}
+			}
+		})
+
 
 
 
