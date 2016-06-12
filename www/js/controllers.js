@@ -444,11 +444,15 @@ angular.module('starter.controllers', [])
 		}
 
 	})
-	.controller('OwnerNoWasteBoardCtrl', function ($scope, $rootScope, $ionicModal, Profile, Shop, NoWasteBoard) {
+	.controller('OwnerNoWasteBoardCtrl', function ($scope, $rootScope, $ionicModal, Profile, Shop, NoWasteBoard,NoWasteBoardSubscription) {
 		$scope.noWasteItemData = {};
 		$scope.noWasteBoard = {};
 		$scope.shouldShowDelete = false;
 		$scope.shouldShowAdd = true;
+		$scope.itemId = {};
+		$scope.itemName = {};
+		$scope.noWasteBoardSubcribers= {};
+		$scope.theshop= {};
 		$rootScope.$broadcast('loading:show');
 		Profile.shop({
 				id: $rootScope.currentProfile.id
@@ -536,6 +540,78 @@ angular.module('starter.controllers', [])
 			$scope.closeAddNoWasteItemModal();
 
 		}
+		
+		
+		$ionicModal.fromTemplateUrl('templates/owner-nowasteboard-tab-give-nowaste-item-modal.html', {
+			scope: $scope
+		}).then(function (modal) {
+			$scope.giveNoWasteItemModal = modal;
+		});
+
+
+		$scope.closeGiveNoWasteItemModal = function () {
+			$scope.giveNoWasteItemModal.hide();
+		};
+
+		$scope.openGiveNoWasteItemModal = function (itemId,itemName) {
+			$scope.giveNoWasteItemModal.show();
+			$scope.itemId=itemId;
+			$scope.itemName=itemName;
+			$rootScope.$broadcast('loading:show');
+			NoWasteBoardSubscription.find({
+                filter: {where: {noWasteBoardId: $scope.noWasteBoard.id},"include": ["profile"]}
+            }).$promise.then(
+            		function (response) {
+						$scope.noWasteBoardSubcribers=response;
+						console.log('noWasteBoardSubcribers found :');
+						console.log($scope.noWasteBoardSubcribers);	
+						$rootScope.$broadcast('loading:hide');
+					},
+					function (response) {
+						console.log("Error: " + response.status + " " + response.statusText);
+						$rootScope.$broadcast('loading:hide');
+					});
+		};
+		
+		
+		$scope.giveItemToSubscriber = function (profileId,itemId) {
+			console.log('giveItemToSubscriber profileId : '+profileId+', itemId : '+itemId );
+			//remove item remaining number
+			for (var i = 0; i < $scope.noWasteBoard.noWasteItemList.length; i++) {
+				if ($scope.noWasteBoard.noWasteItemList[i].id == itemId) {
+					console.log('id giveItemToSubscriber found : ' + $scope.noWasteBoard.noWasteItemList[i].id);
+					$scope.noWasteBoard.noWasteItemList[i].itemRemainingNumber=$scope.noWasteBoard.noWasteItemList[i].itemRemainingNumber-1;		
+					$scope.noWasteBoard.$save();
+					break;
+				}	
+			}
+			//+1 peps for subscriber
+			Profile.findById({ id: profileId }).$promise.then(
+			function (response) {
+				$scope.subscriber=response;
+				$scope.subscriber.peps=$scope.subscriber.peps+1;	
+				Profile.prototype$updateAttributes({
+					id: profileId
+				}, {
+					peps: $scope.subscriber.peps
+				});
+			});
+			
+			
+			//+1 peps for the shop
+			$scope.theshop.pepsShop=$scope.theshop.pepsShop+1;
+			$scope.theshop.$save();
+			
+			$scope.closeGiveNoWasteItemModal();
+			
+			
+		};
+		
+		
+		
+		
+		
+		
 
 	})
 	

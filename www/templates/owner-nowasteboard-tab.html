@@ -1,4 +1,4 @@
-<ion-view view-title="No Waste Board">
+<ion-view cache-view="false" view-title="No Waste Board">
   <ion-content class="padding">
 
 
@@ -26,16 +26,14 @@
 			</div>
 			<ion-list show-delete="shouldShowDelete">
 				<ion-item ng-repeat="item in noWasteBoard.noWasteItemList" class="item-thumbnail-left">
-					<div class="row">
-						<div class="col col-50">
-							<h2>{{item.name}} </h2>
-						</div>
-
-						<div class="col col-50">
-							{{item.itemRemainingNumber}} remaining
-
-						</div>
-					</div>
+		
+	{{item.name}} {{item.itemRemainingNumber}} remaining 	<a ng-show="item.itemRemainingNumber > 0"  type="button" class="button button-small button-balanced" ng-click="openGiveNoWasteItemModal(item.id,item.name)"><i class="icon ion-android-hand"></i> Give It </a>
+			
+				
+				
+					
+						
+		
 					<ion-delete-button class="ion-minus-circled" ng-click="deleteNoWasteItem(item.id)">
 					</ion-delete-button>
 				</ion-item>
