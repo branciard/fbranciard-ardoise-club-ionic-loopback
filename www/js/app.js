@@ -68,45 +68,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
 
 	// Each tab has its own nav history stack:
-
-	.state('user-tabs.dash', {
-		url: '/dash',
-		views: {
-			'tab-dash': {
-				templateUrl: 'templates/tab-dash.html',
-				controller: 'DashCtrl'
-			}
-		}
-	})
-
-	.state('user-tabs.chats', {
-			url: '/chats',
-			views: {
-				'tab-chats': {
-					templateUrl: 'templates/tab-chats.html',
-					controller: 'ChatsCtrl'
-				}
-			}
-		})
-		.state('user-tabs.chat-detail', {
-			url: '/chats/:chatId',
-			views: {
-				'tab-chats': {
-					templateUrl: 'templates/chat-detail.html',
-					controller: 'ChatDetailCtrl'
-				}
-			}
-		})
-
-	.state('user-tabs.account', {
-			url: '/account',
-			views: {
-				'tab-account': {
-					templateUrl: 'templates/tab-account.html',
-					controller: 'AccountCtrl'
-				}
-			}
-		})
 		.state('user-tabs.user-profile-tab', {
 			url: '/user-profile-tab',
 			views: {
@@ -121,7 +82,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 			views: {
 				'user-search-tab': {
 					templateUrl: 'templates/user-search-tab.html',
-					controller: 'SearchCtrl'
+					controller: 'UserSearchCtrl'
 				}
 			}
 		})
@@ -130,7 +91,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 			views: {
 				'user-search-tab': {
 					templateUrl: 'templates/user-shopdetails.html',
-					controller: 'ShopDetailCtrl'		
+					controller: 'UserShopDetailCtrl'		
 				}
 			}
 		})
@@ -139,7 +100,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 			views: {
 				'user-nowasteboards-tab': {
 					templateUrl: 'templates/user-nowasteboards-tab.html',
-					controller: 'NoWasteBoardsCtrl'
+					controller: 'UserNoWasteBoardsCtrl'
 				}
 			}
 		})
@@ -148,7 +109,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 			views: {
 				'user-nowasteboards-tab': {
 					templateUrl: 'templates/user-shopdetails.html',
-					controller: 'ShopDetailCtrl'		
+					controller: 'UserShopDetailCtrl'		
 				}
 			}
 		})
@@ -157,7 +118,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 			views: {
 				'user-dailyboards-tab': {
 					templateUrl: 'templates/user-dailyboards-tab.html',
-					controller: 'DailyBoardsCtrl'
+					controller: 'UserDailyBoardsCtrl'
 				}
 			}
 		})
@@ -166,14 +127,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 			views: {
 				'user-dailyboards-tab': {
 					templateUrl: 'templates/user-shopdetails.html',
-					controller: 'ShopDetailCtrl'		
+					controller: 'UserShopDetailCtrl'		
 				}
 			}
 		})
-
-
-
-
 
 	.state('owner-tabs', {
 			url: '/owner-tabs',
@@ -185,7 +142,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 			views: {
 				'owner-dailyboard-tab': {
 					templateUrl: 'templates/owner-dailyboard-tab.html',
-					controller: 'DailyBoardCtrl'
+					controller: 'OwnerDailyBoardCtrl'
 				}
 			}
 		})
@@ -194,7 +151,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 			views: {
 				'owner-nowasteboard-tab': {
 					templateUrl: 'templates/owner-nowasteboard-tab.html',
-					controller: 'NoWasteBoardCtrl'
+					controller: 'OwnerNoWasteBoardCtrl'
 				}
 			}
 		})
@@ -202,7 +159,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 			url: '/owner-clients-tab',
 			views: {
 				'owner-clients-tab': {
-					templateUrl: 'templates/owner-clients-tab.html'
+					templateUrl: 'templates/owner-clients-tab.html',
+					controller: 'OwnerClientsCtrl'
 				}
 			}
 		})
@@ -215,9 +173,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 				}
 			}
 		})
-
 	;
-
 	// if none of the above states are matched, use this as the fallback
 	$urlRouterProvider.otherwise('login');
 

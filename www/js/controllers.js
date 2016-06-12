@@ -1,7 +1,7 @@
 angular.module('starter.controllers', [])
 
 
-.controller('loginCtrl', function ($scope, $rootScope, $state, $localStorage, AuthService) {
+.controller('loginCtrl', function ($scope, $rootScope, $state,$ionicModal, $localStorage, AuthService) {
 	// Form data for the login modal
 
 	$scope.loginData = $localStorage.getObject('userinfo', '{}');
@@ -22,11 +22,6 @@ angular.module('starter.controllers', [])
 		$rootScope.$broadcast('loading:hide');
 	};
 
-	$scope.logOut = function () {
-		AuthService.logout();
-		$scope.loggedIn = false;
-		$scope.username = '';
-	};
 
 	$rootScope.$on('login:Successful', function () {
 
@@ -36,25 +31,49 @@ angular.module('starter.controllers', [])
 		$state.go('user-tabs.user-dailyboards-tab');
 	});
 
+	
+    // Create the login modal that we will use later
+    $ionicModal.fromTemplateUrl('templates/register.html', {
+        scope: $scope
+    }).then(function (modal) {
+        $scope.registerform = modal;
+    });
+
+    // Triggered in the login modal to close it
+    $scope.closeRegister = function () {
+        $scope.registerform.hide();
+    };
+
+    // Open the login modal
+    $scope.register = function () {
+        $scope.registerform.show();
+    };
+	
+	
+	
 	// Perform the login action when the user submits the login form
 	$scope.doRegister = function () {
 		 $rootScope.$broadcast('loading:show');
 		console.log('Doing registration', $scope.registration);
-		$scope.loginData.username = $scope.registration.username;
-		$scope.loginData.password = $scope.registration.password;
+
 
 		AuthService.register($scope.registration);
 		$rootScope.$broadcast('loading:hide');
+		$scope.closeRegister();
 	};
 
 	$rootScope.$on('registration:Successful', function () {
-		$localStorage.storeObject('userinfo', $scope.loginData);
-		$state.go('user-tabs.user-dailyboards-tab');
+		// auto login after register ok
+		console.log('registration:Successful');
+		$scope.loginData.username = $scope.registration.username;
+		$scope.loginData.password = $scope.registration.password;
+		$scope.doLogin();
+		
 	});
 
 })
 
-.controller('OwnerProfileCtrl', function ($scope, $rootScope, $state, $ionicModal, $ionicLoading,$ionicPopup, Profile, Shop, DailyBoard, DailyBoardSubscription, NoWasteBoard, NoWasteBoardSubscription) {
+.controller('OwnerProfileCtrl', function ($scope, $rootScope, $state, $ionicModal, $ionicLoading,$ionicPopup, Profile, Shop, DailyBoard, DailyBoardSubscription, NoWasteBoard, NoWasteBoardSubscription,AuthService) {
 
 	    $rootScope.$broadcast('loading:show');
 		$scope.shopCreateData = {};
@@ -85,6 +104,15 @@ angular.module('starter.controllers', [])
 					$rootScope.$broadcast('loading:hide');
 				}
 			);
+
+		
+		$scope.logOut = function () {
+			AuthService.logout();
+		};
+		$rootScope.$on('logout:Successful', function () {
+			console.log('logout:Successful');
+			$state.go('login');		
+		});
 
 
 		$ionicModal.fromTemplateUrl('templates/owner-profile-tab-add-shop-modal.html', {
@@ -211,19 +239,24 @@ angular.module('starter.controllers', [])
 										function (response) {
 											$scope.dailyboardToRemove = response;
 											console.log(' have DailyBoard ' + $scope.dailyboardToRemove.id + ' to deleted');
-
-											//delete subscription to do
-
-											/*$scope.dailyBoardSubscriptionToRemove= DailyBoardSubscription.find({ 
-                           		  filter: { where: { dailyBoardId: $scope.$scope.dailyboardToRemove.id } }
-                           		});
-                                 for (var i = 0; i < $scope.dailyBoardSubscriptionToRemove.length; i++) {
-                                     console.log('remove dailyBoardSubscription : ' + $scope.dailyBoardSubscriptionToRemove[i]);
-                                     DailyBoardSubscription.deleteById({ id:  $scope.dailyBoardSubscriptionToRemove[i].id })
-                    	         	  .$promise
-                    	          	  .then(function() { console.log(' dailyBoardSubscription '+$scope.dailyBoardSubscriptionToRemove[i].id+' deleted'); });
-                                 }
-                           		 */
+				
+											DailyBoardSubscription.find({
+								                filter: {where: {dailyBoardId: $scope.dailyboardToRemove.id}}
+								            }).$promise.then(
+								            		function (response) {
+														$scope.dailyBoardSubscriptionsToRemove=response;				
+														   for (var i = 0; i < $scope.dailyBoardSubscriptionsToRemove.length; i++) {
+							                                     DailyBoardSubscription.deleteById({ id:  $scope.dailyBoardSubscriptionsToRemove[i].id })
+							                    	         	  .$promise
+							                    	          	  .then(function() { console.log(' dailyBoardSubscription '+$scope.dailyBoardSubscriptionToRemove[i].id+' deleted'); }); 
+														   }	
+													$rootScope.$broadcast('loading:hide');
+													},
+													function (response) {
+														console.log("Error: " + response.status + " " + response.statusText);
+														$rootScope.$broadcast('loading:hide');
+													});
+	
 											DailyBoard.deleteById({
 													id: $scope.dailyboardToRemove.id
 												})
@@ -244,18 +277,26 @@ angular.module('starter.controllers', [])
 											$scope.noWasteboardToRemove = response;
 											console.log(' have NoWasteBoard ' + $scope.noWasteboardToRemove.id + ' to deleted');
 
-											//delete subscription to do
-
-											/*$scope.dailyBoardSubscriptionToRemove= DailyBoardSubscription.find({ 
-                           		  filter: { where: { dailyBoardId: $scope.$scope.dailyboardToRemove.id } }
-                           		});
-                                 for (var i = 0; i < $scope.dailyBoardSubscriptionToRemove.length; i++) {
-                                     console.log('remove dailyBoardSubscription : ' + $scope.dailyBoardSubscriptionToRemove[i]);
-                                     DailyBoardSubscription.deleteById({ id:  $scope.dailyBoardSubscriptionToRemove[i].id })
-                    	         	  .$promise
-                    	          	  .then(function() { console.log(' dailyBoardSubscription '+$scope.dailyBoardSubscriptionToRemove[i].id+' deleted'); });
-                                 }
-                           		 */
+											NoWasteBoardSubscription.find({
+								                filter: {where: {noWasteBoardId: $scope.noWasteboardToRemove.id}}
+								            }).$promise.then(
+								            		function (response) {
+														$scope.noWasteBoardSubscriptionsToRemove=response;				
+														   for (var i = 0; i < $scope.noWasteBoardSubscriptionsToRemove.length; i++) {
+							                                 
+							                                     DailyBoardSubscription.deleteById({ id:  $scope.noWasteBoardSubscriptionsToRemove[i].id })
+							                    	         	  .$promise
+							                    	          	  .then(function() { console.log(' dailyBoardSubscription '+$scope.noWasteBoardSubscriptionsToRemove[i].id+' deleted'); }); 
+														   }
+														$rootScope.$broadcast('loading:hide');
+													},
+													function (response) {
+														console.log("Error: " + response.status + " " + response.statusText);
+														$rootScope.$broadcast('loading:hide');
+													});
+											
+											
+											
 											NoWasteBoard.deleteById({
 													id: $scope.noWasteboardToRemove.id
 												})
@@ -310,7 +351,7 @@ angular.module('starter.controllers', [])
 	})
 
 
-.controller('DailyBoardCtrl', function ($scope, $rootScope, $ionicModal, Profile, Shop, DailyBoard) {
+.controller('OwnerDailyBoardCtrl', function ($scope, $rootScope, $ionicModal, Profile, Shop, DailyBoard) {
 		$scope.dailyItemData = {};
 		$scope.dailyBoard = {};
 		$scope.shouldShowDelete = false;
@@ -403,7 +444,7 @@ angular.module('starter.controllers', [])
 		}
 
 	})
-	.controller('NoWasteBoardCtrl', function ($scope, $rootScope, $ionicModal, Profile, Shop, NoWasteBoard) {
+	.controller('OwnerNoWasteBoardCtrl', function ($scope, $rootScope, $ionicModal, Profile, Shop, NoWasteBoard) {
 		$scope.noWasteItemData = {};
 		$scope.noWasteBoard = {};
 		$scope.shouldShowDelete = false;
@@ -497,16 +538,106 @@ angular.module('starter.controllers', [])
 		}
 
 	})
-	.controller('UserProfileCtrl', function ($scope,$rootScope,Profile) {
+	
+	.controller('OwnerClientsCtrl', function ($scope,$rootScope,Profile,Shop,DailyBoardSubscription,NoWasteBoardSubscription) {
+		$scope.dailyBoardSubcribers = [];
+		$scope.noWasteBoardSubcribers = [];
+		$rootScope.$broadcast('loading:show');	
+		Profile.shop({
+			id: $rootScope.currentProfile.id
+		})
+		.$promise.then(
+			function (response) {
+				$scope.theshop = response;
+				console.log($scope.theshop.id);
+						
+				Shop.dailyBoard({
+					id: $scope.theshop.id
+				}).$promise.then(
+					function (response) {
+						$scope.dailyBoard = response;
+						console.log("Load dailyBoard id: " + $scope.dailyBoard.id);
+						
+						
+						DailyBoardSubscription.find({
+			                filter: {where: {dailyBoardId: $scope.dailyBoard.id},"include": ["profile"]}
+			            }).$promise.then(
+			            		function (response) {
+									$scope.dailyBoardSubcribers=response;
+									console.log('dailyBoardSubcribers found ');
+									$rootScope.$broadcast('loading:hide');
+								},
+								function (response) {
+									console.log("Error: " + response.status + " " + response.statusText);
+									$rootScope.$broadcast('loading:hide');
+								});
+						
+						$rootScope.$broadcast('loading:hide');
+					},
+					function (response) {
+						console.log("Error: " + response.status + " " + response.statusText);
+						$rootScope.$broadcast('loading:hide');
+					});
+				
+				
+			
+				Shop.noWasteBoard({
+					id: $scope.theshop.id
+				}).$promise.then(
+					function (response) {
+						$scope.noWasteBoard = response;
+						console.log("Load noWasteBoard id: " + $scope.noWasteBoard.id);
+											
+						NoWasteBoardSubscription.find({
+			                filter: {where: {noWasteBoardId: $scope.noWasteBoard.id},"include": ["profile"]}
+			            }).$promise.then(
+			            		function (response) {
+									$scope.noWasteBoardSubcribers=response;
+									console.log('noWasteBoardSubcribers found :');
+									console.log($scope.noWasteBoardSubcribers);	
+									$rootScope.$broadcast('loading:hide');
+								},
+								function (response) {
+									console.log("Error: " + response.status + " " + response.statusText);
+									$rootScope.$broadcast('loading:hide');
+								});
+						
+						$rootScope.$broadcast('loading:hide');
+					},
+					function (response) {
+						console.log("Error: " + response.status + " " + response.statusText);
+						$rootScope.$broadcast('loading:hide');
+					});
+			},
+			function (response) {
+				console.log("Error: " + response.status + " " + response.statusText);
+				$rootScope.$broadcast('loading:hide');
+			});
+
+	})
+	
+	
+	
+	
+	.controller('UserProfileCtrl', function ($scope,$rootScope,$state,Profile,AuthService) {
 		console.log('username '+$rootScope.currentProfile.username+' has '+$rootScope.currentProfile.peps+' peps');
 
 		$scope.username=$rootScope.currentProfile.username;
 		$scope.peps=$rootScope.currentProfile.peps;
 
 		
+		$scope.logOut = function () {
+			AuthService.logout();
+		};
+		$rootScope.$on('logout:Successful', function () {
+			console.log('logout:Successful');
+			$state.go('login');		
+		});
+
+
 		
 	})
-	.controller('SearchCtrl', function ($scope,$rootScope,$state,Shop) {
+	.controller('UserSearchCtrl', function ($scope,$rootScope,Shop) {
 		
 		$scope.resultShopList = {};
 		$rootScope.$broadcast('loading:show');
@@ -515,13 +646,10 @@ angular.module('starter.controllers', [])
 			});
 		$rootScope.$broadcast('loading:hide');
 
-
-		
-		
 		
 	})
 	
-	.controller('DailyBoardsCtrl', function ($scope, $rootScope, Profile) {
+	.controller('UserDailyBoardsCtrl', function ($scope, $rootScope, Profile) {
 		$scope.dailyBoards = {};
 
 		$rootScope.$broadcast('loading:show');
@@ -536,7 +664,7 @@ angular.module('starter.controllers', [])
 			}
 			);
 	})
-	.controller('NoWasteBoardsCtrl', function ($scope, $rootScope, Profile) {
+	.controller('UserNoWasteBoardsCtrl', function ($scope, $rootScope, Profile) {
 		$scope.noWasteBoards = {};
 
 		$rootScope.$broadcast('loading:show');
@@ -552,7 +680,7 @@ angular.module('starter.controllers', [])
 			);
 	})
 	
-   .controller('ShopDetailCtrl', function ($scope,$rootScope, $stateParams,Shop,DailyBoardSubscription,NoWasteBoardSubscription) {
+   .controller('UserShopDetailCtrl', function ($scope,$rootScope, $stateParams,Shop,DailyBoardSubscription,NoWasteBoardSubscription) {
 	     
 		$scope.dailyBoard = {};
 		$scope.dailyBoardSubscription = {};
@@ -699,34 +827,5 @@ angular.module('starter.controllers', [])
 			}
 			);
 		}
-		
-		
 
-   })
-	
-	.controller('DashCtrl', function ($scope) {})
-
-.controller('ChatsCtrl', function ($scope, Chats) {
-	// With the new view caching in Ionic, Controllers are only called
-	// when they are recreated or on app start, instead of every page change.
-	// To listen for when this page is active (for example, to refresh data),
-	// listen for the $ionicView.enter event:
-	//
-	//$scope.$on('$ionicView.enter', function(e) {
-	//});
-
-	$scope.chats = Chats.all();
-	$scope.remove = function (chat) {
-		Chats.remove(chat);
-	};
-})
-
-.controller('ChatDetailCtrl', function ($scope, $stateParams, Chats) {
-	$scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('AccountCtrl', function ($scope) {
-	$scope.settings = {
-		enableFriends: true
-	};
-});
+   });

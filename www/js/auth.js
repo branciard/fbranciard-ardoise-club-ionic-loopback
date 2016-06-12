@@ -52,6 +52,7 @@ angular
 					.$promise
 					.then(function () {
 						$rootScope.currentProfile = null;
+						$rootScope.$broadcast('logout:Successful');
 					});
 			}
 
@@ -64,7 +65,7 @@ angular
 					})
 					.$promise
 					.then(function (response) {
-
+						$rootScope.$broadcast('registration:Successful');
 						},
 						function (response) {
 
