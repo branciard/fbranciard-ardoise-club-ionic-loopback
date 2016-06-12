@@ -1,21 +1,16 @@
-<ion-view cache-view="false"  view-title="Search">
-  <ion-content class="padding">
-    <h2>Search Shop around</h2>
-    <p>
-       <i class="icon ion-hammer"></i>  MAPS will be here. NOT IMPLEMENTED YET   <i class="icon ion-hammer"></i>
-</p>
-<br>
-
-<div class="list">
-																			
-       <ion-item class="item item-thumbnail-left" ng-repeat="shop in resultShopList" href="#/user-tabs/user-search-tab/{{shop.id}}">
-   <img src="img/ionic.png">
-      <h2>{{shop.name}}    </h2>
-      <p>{{shop.category}}</p>
-    </ion-item>
-
-
-</div>
-
-  </ion-content>
+<ion-view cache-view="false" view-title="Search">
+	<ion-content class="padding">
+		<h2>Search Shop around</h2>
+		<p>
+			<i class="icon ion-hammer"></i> MAPS will be here. NOT IMPLEMENTED YET <i class="icon ion-hammer"></i>
+		</p>
+		<br>
+		<div class="list">
+			<ion-item class="item item-thumbnail-left" ng-repeat="shop in resultShopList" href="#/user-tabs/user-search-tab/{{shop.id}}">
+				<img src="img/ionic.png">
+				<h2>{{shop.name}}    </h2>
+				<p>{{shop.category}}</p>
+			</ion-item>
+		</div>
+	</ion-content>
 </ion-view>

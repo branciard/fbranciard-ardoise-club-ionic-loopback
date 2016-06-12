@@ -1,28 +1,23 @@
-<ion-view  cache-view="false"  view-title="Clients">
+<ion-view cache-view="false" view-title="Clients">
 	<ion-content class="padding">
 		<h2>All your subscribers</h2>
-	
-	<div class="list">
-				<div class="item item-divider">
-				<h2>Daily board Subscribers</h2> 
+		<div class="list">
+			<div class="item item-divider">
+				<h2>Daily board Subscribers</h2>
 			</div>
-
-    <a class="item item-avatar" ng-repeat="dailyBoardSubcriber in dailyBoardSubcribers"  href="#">
-      <img src="img/ionic.png">
-      <h2>{{dailyBoardSubcriber.profile.username}}</h2>
-      <p>has {{dailyBoardSubcriber.profile.peps}} PEPS</p>
-    </a>
-		<div class="item item-divider">
-				<h2>No Waste board Subscribers</h2> 
+			<a class="item item-avatar" ng-repeat="dailyBoardSubcriber in dailyBoardSubcribers" href="#">
+				<img src="img/ionic.png">
+				<h2>{{dailyBoardSubcriber.profile.username}}</h2>
+				<p>has {{dailyBoardSubcriber.profile.peps}} PEPS</p>
+			</a>
+			<div class="item item-divider">
+				<h2>No Waste board Subscribers</h2>
 			</div>
-			    <a class="item item-avatar" ng-repeat="noWasteBoardSubcriber in noWasteBoardSubcribers"  href="#">
-      <img src="img/ionic.png">
-      <h2>{{noWasteBoardSubcriber.profile.username}}</h2>
-      <p>has {{noWasteBoardSubcriber.profile.peps}} PEPS</p>
-    </a>
- 
-</div>
-	
-	
+			<a class="item item-avatar" ng-repeat="noWasteBoardSubcriber in noWasteBoardSubcribers" href="#">
+				<img src="img/ionic.png">
+				<h2>{{noWasteBoardSubcriber.profile.username}}</h2>
+				<p>has {{noWasteBoardSubcriber.profile.peps}} PEPS</p>
+			</a>
+		</div>
 	</ion-content>
 </ion-view>

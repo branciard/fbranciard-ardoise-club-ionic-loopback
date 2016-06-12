@@ -1,16 +1,13 @@
 <ion-view cache-view="false" view-title="Owner Shope Profile">
 	<ion-content class="padding">
 		<div class="list">
-
 			<div class="item item-divider">
 				Owner shop Profile
 			</div>
-			
-			
-					<a class="item item-icon-right" href="#/user-tabs/user-profile-tab">
+			<a class="item item-icon-right" href="#/user-tabs/user-profile-tab">
 				<i class="icon ion-arrow-swap"></i> Switch to user mode
 			</a>
-			
+
 			<div class="item">
 				numbers of clients :
 				<span class="item-note">
@@ -23,20 +20,12 @@
       {{shop.pepsShop}}
     </span>
 			</div>
-					
 			<a class="item item-icon-right" ng-click="logOut()">
 				<i class="icon ion-log-out"></i> Log out
 			</a>
-			
-
-
-	
-
-
 			<div class="item item-divider">
 				Shop
 			</div>
-
 			<div ng-show="showCreateShopBtn" class="item item-icon-right" ng-click="openAddShopModal()">
 				<i class="icon ion-plus-circled"></i> Create a shop
 
@@ -53,7 +42,7 @@
       {{shop.category}}
     </span>
 			</div>
-						<div ng-show="!showCreateShopBtn" class="item">
+			<div ng-show="!showCreateShopBtn" class="item">
 				Mail
 				<span class="item-note">
       {{shop.mail}}
@@ -107,12 +96,6 @@
 				<i class="icon ion-minus-circled"></i> Delete the shop
 
 			</div>
-
-
-
-
 		</div>
-
-
 	</ion-content>
 </ion-view>

@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 	});
 
 
-	$rootScope.$on('loading:show', function () {		
+	$rootScope.$on('loading:show', function () {
 		$ionicLoading.show({
 			template: '<ion-spinner></ion-spinner> Loading ...'
 		})
@@ -68,12 +68,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
 
 	// Each tab has its own nav history stack:
-		.state('user-tabs.user-profile-tab', {
+	.state('user-tabs.user-profile-tab', {
 			url: '/user-profile-tab',
 			views: {
 				'user-profile-tab': {
 					templateUrl: 'templates/user-profile-tab.html',
-					controller: 'UserProfileCtrl'				
+					controller: 'UserProfileCtrl'
 				}
 			}
 		})
@@ -86,12 +86,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 				}
 			}
 		})
-	    .state('user-tabs.user-shopdetails-from-search-tab', {
+		.state('user-tabs.user-shopdetails-from-search-tab', {
 			url: '/user-search-tab/:shopId',
 			views: {
 				'user-search-tab': {
 					templateUrl: 'templates/user-shopdetails.html',
-					controller: 'UserShopDetailCtrl'		
+					controller: 'UserShopDetailCtrl'
 				}
 			}
 		})
@@ -109,7 +109,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 			views: {
 				'user-nowasteboards-tab': {
 					templateUrl: 'templates/user-shopdetails.html',
-					controller: 'UserShopDetailCtrl'		
+					controller: 'UserShopDetailCtrl'
 				}
 			}
 		})
@@ -122,12 +122,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 				}
 			}
 		})
-	    .state('user-tabs.user-shopdetails-from-dailyboards-tab', {
+		.state('user-tabs.user-shopdetails-from-dailyboards-tab', {
 			url: '/user-dailyboards-tab/:shopId',
 			views: {
 				'user-dailyboards-tab': {
 					templateUrl: 'templates/user-shopdetails.html',
-					controller: 'UserShopDetailCtrl'		
+					controller: 'UserShopDetailCtrl'
 				}
 			}
 		})
@@ -172,8 +172,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 					controller: 'OwnerProfileCtrl'
 				}
 			}
-		})
-	;
+		});
 	// if none of the above states are matched, use this as the fallback
 	$urlRouterProvider.otherwise('login');
 

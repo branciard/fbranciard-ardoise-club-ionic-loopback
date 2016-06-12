@@ -6,19 +6,15 @@
 		</div>
 	</ion-header-bar>
 	<ion-content>
-	
 		<div class="list">
-		<div class="item item-divider">
-				<h2>No Waste board Subscribers</h2> 
+			<div class="item item-divider">
+				<h2>No Waste board Subscribers</h2>
 			</div>
-			    <a class="item item-avatar" ng-repeat="noWasteBoardSubcriber in noWasteBoardSubcribers"  ng-click="giveItemToSubscriber(noWasteBoardSubcriber.profile.id, itemId)">
-      <img src="img/ionic.png">
-      <h2>{{noWasteBoardSubcriber.profile.username}}</h2>
-      <p>has {{noWasteBoardSubcriber.profile.peps}} PEPS. Give Item <i class="icon ion-android-hand"></i> </p>
-	
-     </a>
- 
-</div>
-
+			<a class="item item-avatar" ng-repeat="noWasteBoardSubcriber in noWasteBoardSubcribers" ng-click="giveItemToSubscriber(noWasteBoardSubcriber.profile.id, itemId)">
+				<img src="img/ionic.png">
+				<h2>{{noWasteBoardSubcriber.profile.username}}</h2>
+				<p>has {{noWasteBoardSubcriber.profile.peps}} PEPS. Give Item <i class="icon ion-android-hand"></i> </p>
+			</a>
+		</div>
 	</ion-content>
 </ion-modal-view>

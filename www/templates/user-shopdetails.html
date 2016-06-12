@@ -1,16 +1,10 @@
 <ion-view view-title="Shop detail">
-  <ion-content class="padding">
-    <h2>Welcome at {{shop.name}}</h2>
-
+	<ion-content class="padding">
+		<h2>Welcome at {{shop.name}}</h2>
 		<div class="card text-center">
 			<div class="item item-divider">
-
-				
-							<h2>{{dailyBoard.title}} </h2>
-
+				<h2>{{dailyBoard.title}} </h2>
 			</div>
-			
-
 			<ion-list>
 				<ion-item ng-repeat="item in dailyBoard.dailyItemList" class="item-thumbnail-left">
 					<div class="row">
@@ -20,29 +14,19 @@
 
 						<div class="col col-50">
 							{{item.price}} <i class="icon ion-social-usd"></i>
-
 						</div>
 					</div>
 				</ion-item>
 			</ion-list>
 			<div class="item item-divider">
-
-				
-	  <a ng-show="!hasSubscribedToDailyBoard" type="button" class="button button-small button-positive " ng-click="subscribeToDailyBoard(dailyBoard.id)"><i class="icon ion-bookmark"></i> Subscribe </a>
-      <a ng-show="hasSubscribedToDailyBoard" type="button" class="button button-small button-balanced" ng-click="unSubscribeToDailyBoard(dailyBoardSubscription.id)"><i class="icon ion-bookmark"></i> unSubscribe </a>
-
+				<a ng-show="!hasSubscribedToDailyBoard" type="button" class="button button-small button-positive " ng-click="subscribeToDailyBoard(dailyBoard.id)"><i class="icon ion-bookmark"></i> Subscribe </a>
+				<a ng-show="hasSubscribedToDailyBoard" type="button" class="button button-small button-balanced" ng-click="unSubscribeToDailyBoard(dailyBoardSubscription.id)"><i class="icon ion-bookmark"></i> unSubscribe </a>
 			</div>
 		</div>
-		
-		
-<div class="card text-center">
+		<div class="card text-center">
 			<div class="item item-divider">
-		
-							<h2>{{noWasteBoard.title}}</h2>
-	
+				<h2>{{noWasteBoard.title}}</h2>
 			</div>
-			
-			
 			<ion-list>
 				<ion-item ng-repeat="item in noWasteBoard.noWasteItemList" class="item-thumbnail-left">
 					<div class="row">
@@ -57,24 +41,20 @@
 					</div>
 				</ion-item>
 			</ion-list>
-			
-						<div class="item item-divider">
 
-				
-	  <a ng-show="!hasSubscribedToNoWasteBoard"  type="button" class="button button-small button-positive" ng-click="subscribeToNoWasteBoard(noWasteBoard.id)"><i class="icon ion-bookmark"></i> Subscribe </a>
-      <a ng-show="hasSubscribedToNoWasteBoard"  type="button" class="button button-small button-balanced" ng-click="unSubscribeToNoWasteBoard(noWasteBoardSubscription.id)"><i class="icon ion-bookmark"></i> unSubscribe </a>
-
+			<div class="item item-divider">
+				<a ng-show="!hasSubscribedToNoWasteBoard" type="button" class="button button-small button-positive" ng-click="subscribeToNoWasteBoard(noWasteBoard.id)"><i class="icon ion-bookmark"></i> Subscribe </a>
+				<a ng-show="hasSubscribedToNoWasteBoard" type="button" class="button button-small button-balanced" ng-click="unSubscribeToNoWasteBoard(noWasteBoardSubscription.id)"><i class="icon ion-bookmark"></i> unSubscribe </a>
 			</div>
-			
 		</div>
-
-        <div class="card">
-           <div class="item item-divider">
-              <h3>Location Information</h3> 
-           </div>
-            <div class="item">
-                   <h2>Our Address</h2>
-                    <address>
+		
+		<div class="card">
+			<div class="item item-divider">
+				<h3>Location Information</h3>
+			</div>
+			<div class="item">
+				<h2>Our Address</h2>
+				<address>
 		              {{shop.street}}<br>
 		              {{shop.zipcode}},{{shop.city}}<br>
 		              {{shop.country}}<br>
@@ -82,15 +62,13 @@
 		              <i class="icon ion-android-mail"></i>: 
                         <a href="mailto:confusion@food.net">{{shop.mail}}</a>
 		           </address>
-            </div>
-            <div>
-                <div class="button-bar">
-                    <a type="button" class="button button-positive" href="tel:{{shop.tel}}"><i class="icon ion-android-call"></i> Call</a>
-                    <a type="button" class="button button-balanced" href="mailto:{{shop.mail}}"><i class="icon ion-android-mail"></i> Email</a>
-                </div>
-            </div>
-        </div>
-
-
-  </ion-content>
+			</div>
+			<div>
+				<div class="button-bar">
+					<a type="button" class="button button-positive" href="tel:{{shop.tel}}"><i class="icon ion-android-call"></i> Call</a>
+					<a type="button" class="button button-balanced" href="mailto:{{shop.mail}}"><i class="icon ion-android-mail"></i> Email</a>
+				</div>
+			</div>
+		</div>
+	</ion-content>
 </ion-view>
